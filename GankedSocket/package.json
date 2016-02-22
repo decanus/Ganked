@@ -1,0 +1,33 @@
+{
+  "name": "ganked-socket",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bash/GankedSocket.git"
+  },
+  "contributors": [
+    "Ruben Schmidmeister <ruben.schmidmeister@icloud.com> (https://github.com/bash)"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bash/GankedSocket/issues"
+  },
+  "homepage": "https://github.com/bash/GankedSocket#readme",
+  "dependencies": {
+    "cookie": "^0.2.3",
+    "node-fetch": "^1.3.3",
+    "ws": "^0.8.1"
+  },
+  "engines": {
+    "node": "5.2.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.8.0"
+  }
+}
