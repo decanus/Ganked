@@ -1,0 +1,18 @@
+{
+  "skeleton": "skeleton",
+  "meta": {
+    "title": "Page not found - Ganked.net",
+    "description":"Ganked.net is the best site for statistics across a range of multiple games.",
+    "site_name":"Ganked.net",
+    "keywords": "test, test",
+    "image": "test.jpg"
+  },
+  "content": {
+    "append": {
+      "main": "content.xhtml"
+    }
+  },
+  "classes": {
+    "main": "wrap tac"
+  }
+}

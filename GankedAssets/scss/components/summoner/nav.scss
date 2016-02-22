@@ -1,0 +1,15 @@
+.summoner-nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -($gap-size / 2);
+
+  > .link {
+    padding: ($gap-size / 2);
+    flex-grow: 1;
+    flex-basis: 16rem;
+
+    > * {
+      margin: 0;
+    }
+  }
+}

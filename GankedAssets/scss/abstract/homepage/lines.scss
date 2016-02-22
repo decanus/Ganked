@@ -1,0 +1,7 @@
+%homepage-lines {
+  background-repeat: no-repeat;
+
+  @media #{$media-query-tablet} {
+    background-image: none !important;
+  }
+}

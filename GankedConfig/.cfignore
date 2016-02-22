@@ -1,0 +1,8 @@
+**/.git
+**/.gitignore
+**/README.md
+**/phpunit.xml
+**/tests/
+**/build/
+build.xml
+updateVersion.php

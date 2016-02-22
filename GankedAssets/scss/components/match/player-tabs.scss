@@ -1,0 +1,25 @@
+.match-player-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: -10px;
+
+  > .players {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  > .players > .title,
+  > .players > .player {
+    padding: 10px;
+  }
+
+  > .players > .title {
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  > .content {
+    padding: 10px;
+  }
+}

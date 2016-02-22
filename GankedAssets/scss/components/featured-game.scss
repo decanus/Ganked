@@ -1,0 +1,60 @@
+.featured-game {
+  height: 12em;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  background-size: auto, cover;
+
+  > .title {
+    position: absolute;
+    bottom: 1rem;
+    left: $gap-size;
+    color: #fff;
+
+    @media #{$media-query-phone} {
+      left: $gap-size !important;
+      right: auto !important;
+    }
+  }
+
+  &.-csgo {
+    @include featured-game-bg($image-csgo-small, right);
+  }
+
+  &.-lol {
+    @include featured-game-bg($image-lol-small, right);
+  }
+
+  &.-wow {
+    @include featured-game-bg($image-wow-small, right);
+  }
+
+  &.-dota {
+    @include featured-game-bg($image-dota-small, right);
+  }
+
+  &.-even {
+    > .title {
+      left: auto;
+      right: $gap-size;
+    }
+
+    &.-csgo {
+      @include featured-game-bg($image-csgo-small, left);
+    }
+
+    &.-lol {
+      @include featured-game-bg($image-lol-small, left);
+    }
+
+    &.-wow {
+      @include featured-game-bg($image-wow-small, left);
+    }
+
+    &.-dota {
+      @include featured-game-bg($image-dota-small, left);
+    }
+  }
+}

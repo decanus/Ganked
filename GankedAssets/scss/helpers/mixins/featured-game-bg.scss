@@ -1,0 +1,3 @@
+@mixin featured-game-bg($image, $direction) {
+  background-image: linear-gradient(to $direction, rgba($secondary-color, 0.7) 50%, transparent 100%), $image;
+}

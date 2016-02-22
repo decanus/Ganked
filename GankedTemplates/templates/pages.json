@@ -1,0 +1,20 @@
+{
+  "/": "homepage",
+  "/login": "login",
+  "/forgot-password": "forgotPassword",
+  "/games": "games",
+  "/register": "register",
+  "/404": "404",
+  "/games/lol": "games/lol",
+  "/games/cs-go": "games/cs-go",
+  "/games/dota": "games/dota",
+  "/games/wow": "games/wow",
+  "/verification/success": "verification/success",
+  "/verification/error": "verification/error",
+  "/no-ie": "no-ie",
+  "/terms": "terms",
+  "/privacy": "privacy",
+  "/about": "about",
+  "/news": "news",
+  "/create-team": "create-team"
+}

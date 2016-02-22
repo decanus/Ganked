@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "title": "Games",
+    "description": "Get an quick overview of all the games we feature on Ganked.net",
+    "image":"http://cdn.ganked.net/favicon/android-chrome-192x192.png"
+  },
+  "content": {
+    "append": {
+      "main": "content.xhtml"
+    }
+  },
+  "classes": {
+    "main": "page-wrap -padding"
+  }
+}

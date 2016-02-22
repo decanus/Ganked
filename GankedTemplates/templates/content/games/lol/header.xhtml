@@ -1,0 +1,66 @@
+<header class="landing-header -lol" data-fixed-header-container="">
+
+    <div id="header" data-render-keepid=""/>
+
+    <div class="landing-wrap -padding">
+        <h1 class="-banner -white _center" id="gameName"/>
+
+        <form action="/games/lol/search" class="search" method="get" autocomplete="off">
+            <div class="grid-wrapper -gap">
+                <div class="item -grow2">
+
+                    <div class="input-group" data-id="searchWrap">
+                        <div class="input">
+                            <div class="input-group" data-render-keepid="">
+                                <div class="input">
+                                    <input type="text" placeholder="Summoners..." class="input" name="name"
+                                           data-id="search" data-render-keepid=""/>
+                                </div>
+
+                                <div class="input -addon">
+                                    <select name="region" class="input -auto">
+                                        <option value="all" id="all">All</option>
+                                        <option value="br">BR</option>
+                                        <option value="eune">EUNE</option>
+                                        <option value="euw">EUW</option>
+                                        <option value="lan">LAN</option>
+                                        <option value="las">LAS</option>
+                                        <option value="na">NA</option>
+                                        <option value="oce">OCE</option>
+                                        <option value="ru">RU</option>
+                                        <option value="tr">TR</option>
+                                        <option value="kr">KR</option>
+                                    </select>
+                                </div>
+
+                                <search-suggestions for="[data-id=search]" attach="[data-id=searchWrap]"/>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="button">
+                            <span class="octicon octicon-search"/>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <small><a href="/games/lol/search/multi">Multi Search</a></small>
+    </div>
+
+    <div class="page-wrap -padding">
+        <section class="page-section">
+            <operation action="leagueOfLegendsFreeChampions" type="builder"/>
+        </section>
+    </div>
+
+    <div class="landing-wrap">
+        <section class="page-section _center">
+            <div class="grid-wrapper -gap -type-a">
+                <div class="item -grow">
+                    <a class="link-button -block -center" href="/games/lol/champions">Champions</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</header>

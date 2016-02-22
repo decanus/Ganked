@@ -1,0 +1,39 @@
+.summoner-box {
+  @extend %player-box;
+  display: inline-flex;
+  align-items: center;
+  padding: ($gap-size / 2);
+
+  &.-no-background {
+    padding: 0;
+    margin: -($gap-size / 2);
+    background-color: transparent;
+  }
+  
+  &.-block {
+    display: flex;
+    width: 100%;
+  }
+  
+  > .image {
+    flex-shrink: 0;
+  }
+
+  > .image > .image {
+    border: 3px solid #fff;
+  }
+
+  > .content > .info {
+    @extend %gap-container;
+    display: flex;
+  }
+
+  > .content > .info > .level {
+    color: #fff;
+  }
+
+  > .content > .info > .region,
+  > .content > .info > .level {
+    @extend %gap-item;
+  }
+}

@@ -1,0 +1,11 @@
+.banner-box {
+  display: block;
+  background-color: $primary-color;
+  color: #fff;
+  padding: 1em 2em;
+  margin: .5em 0;
+
+  h1, h2, h3, h4, h5, h6, a {
+    color: #fff;
+  }
+}

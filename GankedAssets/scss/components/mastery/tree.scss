@@ -1,0 +1,23 @@
+.mastery-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  border: 3px solid $primary-color;
+  margin: auto;
+
+  > .row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  > .row > .mastery-item {
+    flex: 0 0 (54px + $masteries-gap * 2);
+    padding: $masteries-gap;
+  }
+
+  @media (max-width: 26em) {
+    padding: 20px 0;
+  }
+}

@@ -1,0 +1,23 @@
+.summoner-match-info {
+  display: flex;
+  align-items: center;
+  margin: -($gap-size / 2);
+  width: (3rem + 6rem + 6.75rem + $gap-size * 3);
+  max-width: 100%;
+
+  > .champion,
+  > .game,
+  > .kda,
+  > .kdaratio,
+  > .button {
+    padding: ($gap-size / 2);
+  }
+
+  > .kda {
+    flex-basis: 6.75rem;
+  }
+
+  > .kdaratio {
+    flex-basis: 6rem;
+  }
+}

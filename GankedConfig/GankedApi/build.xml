@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GankedFetchFramework" default="deploy">
+
+    <include file="../deploy.xml" as="deployment"/>
+
+    <property environment="env"/>
+
+    <target name="deploy">
+        <echo>Deploying GankedApi</echo>
+
+        <antcall target="deployment.copyDependency">
+            <param name="dependency" value="GankedApi"/>
+        </antcall>
+        <antcall target="deployment.copyDependency">
+            <param name="dependency" value="GankedSkeleton"/>
+        </antcall>
+        <antcall target="deployment.copyDependency">
+            <param name="dependency" value="GankedLibrary"/>
+        </antcall>
+
+        <antcall target="clean"/>
+
+        <antcall target="deployment.push">
+            <param name="app" value="${env.JOB_NAME}" />
+        </antcall>
+
+
+        <antcall target="deployment.route">
+            <param name="app" value="${env.JOB_NAME}" />
+            <param name="domain" value="ganked.net" />
+            <param name="route" value="api" />
+        </antcall>
+
+        <antcall target="deployment.switch">
+            <param name="old" value="${env.JOB_NAME}" />
+            <param name="new" value="GankedApi" />
+        </antcall>
+
+    </target>
+
+    <target name="clean">
+
+        <delete file="GankedApi/config/system.ini"/>
+        <move file="GankedApi/config/system.live.ini" tofile="GankedApi/config/system.ini"/>
+
+    </target>
+</project>

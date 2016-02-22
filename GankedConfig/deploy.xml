@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+
+    <target name="copyDependency">
+        <mkdir dir="${dependency}" />
+        <copy todir="${dependency}">
+            <fileset dir="/var/lib/jenkins/workspace/${dependency}/"/>
+        </copy>
+    </target>
+
+    <target name="push">
+
+        <exec executable="cf" failonerror="true">
+            <arg line="api https://api.lyra-836.appcloud.swisscom.com"/>
+        </exec>
+
+        <exec executable="cf" failonerror="true">
+            <arg line="auth"/>
+            <arg line="dean.eigenmann@icloud.com Sherlocked123."/>
+        </exec>
+
+        <exec executable="cf" failonerror="true">
+            <arg line="target"/>
+            <arg line="-o GNKD"/>
+            <arg line="-s PROD"/>
+        </exec>
+
+        <exec executable="cf" failonerror="true">
+            <arg value="push" />
+            <arg line="${app}" />
+            <arg line="-f ../manifest.yml" />
+        </exec>
+
+    </target>
+
+    <target name="route">
+        <exec executable="cf" error="true">
+            <arg line="map-route"/>
+            <arg line="${app}"/>
+            <arg line="${domain}"/>
+            <arg line="-n ${route}"/>
+        </exec>
+    </target>
+
+    <target name="switch">
+
+        <exec executable="cf" failonerror="true">
+            <arg value="delete"/>
+            <arg line="${new}"/>
+            <arg line="-f"/>
+        </exec>
+
+        <exec executable="cf" failonerror="true">
+            <arg value="rename"/>
+            <arg line="${old}"/>
+            <arg line="${new}"/>
+        </exec>
+
+    </target>
+
+</project>

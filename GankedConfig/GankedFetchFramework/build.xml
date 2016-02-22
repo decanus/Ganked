@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GankedFetchFramework" default="deploy">
+
+    <include file="../deploy.xml" as="deployment"/>
+
+    <property environment="env"/>
+
+    <target name="deploy">
+        <echo>Deploying GankedFetchFramework</echo>
+
+        <antcall target="deployment.copyDependency">
+            <param name="dependency" value="GankedFetchFramework"/>
+        </antcall>
+        <antcall target="deployment.copyDependency">
+            <param name="dependency" value="GankedSkeleton"/>
+        </antcall>
+        <antcall target="deployment.copyDependency">
+            <param name="dependency" value="GankedLibrary"/>
+        </antcall>
+
+        <antcall target="clean"/>
+
+        <antcall target="deployment.push">
+            <param name="app" value="${env.JOB_NAME}" />
+        </antcall>
+
+        <antcall target="deployment.route">
+            <param name="app" value="${env.JOB_NAME}" />
+            <param name="domain" value="ganked.net" />
+            <param name="route" value="fetch" />
+        </antcall>
+
+        <antcall target="deployment.switch">
+            <param name="old" value="${env.JOB_NAME}" />
+            <param name="new" value="GankedFetchFramework" />
+        </antcall>
+
+    </target>
+
+    <target name="clean">
+
+        <delete file="GankedFetchFramework/.htaccess"/>
+        <delete file="GankedFetchFramework/config/system.ini"/>
+        <move file="GankedFetchFramework/config/system.live.ini" tofile="GankedFetchFramework/config/system.ini"/>
+
+    </target>
+</project>

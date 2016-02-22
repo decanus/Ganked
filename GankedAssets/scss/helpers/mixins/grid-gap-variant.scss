@@ -1,0 +1,19 @@
+/**
+ * 2015 Ganked <feedback@ganked.net>
+ */
+
+@mixin grid-gap-variant($gap) {
+  margin: -$gap;
+
+  &.-full {
+    width: calc(100% + #{$gap * 2});
+  }
+
+  &.-flow-element {
+    margin: ($box-gap - $gap) -$gap;
+  }
+
+  > .item {
+    padding: $gap;
+  }
+}

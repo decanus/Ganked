@@ -1,0 +1,46 @@
+.search-form {
+  display: inline-flex;
+  max-width: 100%;
+
+  > .input {
+    flex: 1 1 0;
+  }
+
+  &.-block {
+    width: 100%;
+
+    > .input > * {
+      width: 100%;
+    }
+  }
+
+  > .button,
+  > .button.-red {
+    border: none;
+    color: #fff;
+  }
+
+  > .button:not(.-red) {
+    background-color: $primary-color;
+
+    &:hover {
+      background-color: darken($primary-color, 5%);
+    }
+
+    &:active {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  > .button.-red {
+    background-color: $color-red;
+
+    &:hover {
+      background-color: darken($color-red, 5%);
+    }
+
+    &:active {
+      background-color: darken($color-red, 10%);
+    }
+  }
+}

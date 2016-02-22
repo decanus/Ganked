@@ -1,0 +1,26 @@
+//
+// todo: this should be renamed to map-image
+//
+.champion-image {
+  @extend %parallax-image;
+
+  &.-crystal-scar {
+    background-image: $image-crystal-scar;
+  }
+
+  &.-howling-abyss {
+    background-image: $image-howling-abyss;
+  }
+
+  &.-summoners-rift {
+    background-image: $image-summoners-rift;
+  }
+
+  &.-the-twisted-treeline {
+    background-image: $image-the-twisted-treeline;
+  }
+
+  &.-butchers-bridge {
+    background-image: $image-butchers-bridge;
+  }
+}

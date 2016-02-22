@@ -1,0 +1,7 @@
+# This is a template for the user specific configuration
+---
+network:
+  private_ip: 192.168.6.6
+
+provisioned: false
+hostname: lovelybox

@@ -1,0 +1,17 @@
+.page-banner {
+  text-align: center;
+  padding: 1rem $gap-size;
+  background-color: $primary-color;
+  color: #fff;
+  width: 100%;
+  font-size: .8em;
+
+  a {
+    color: #fff;
+  }
+
+  &.-fixed {
+    position: fixed;
+	z-index: 100;
+  }
+}

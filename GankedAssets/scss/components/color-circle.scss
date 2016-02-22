@@ -1,0 +1,14 @@
+.color-circle {
+  display: inline-block;
+  border-radius: 100%;
+  width: 1.5em;
+  height: 1.5em;
+
+  &.-blue {
+    background-color: $primary-color;
+  }
+
+  &.-purple {
+    background-color: $color-purple;
+  }
+}

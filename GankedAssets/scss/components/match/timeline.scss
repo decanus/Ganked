@@ -1,0 +1,37 @@
+.match-timeline {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  > .team {
+    flex: 1 0 450px;
+    max-width: 100%;
+  }
+
+  > .team:nth-child(odd) {
+    padding-right: .5em;
+  }
+
+  > .team:nth-child(even) {
+    padding-left: .5em;
+  }
+
+  @media (max-width: 944px) {
+    > .team:nth-child(odd) {
+      padding-right: 0;
+    }
+
+    > .team:nth-child(even) {
+      padding-left: 0;
+    }
+
+    > .team > .match-timeline-player {
+      border: none;
+    }
+
+    > .team > .match-timeline-player.-mirror {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+}

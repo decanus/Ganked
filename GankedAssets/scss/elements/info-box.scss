@@ -1,0 +1,47 @@
+info-box {
+  position: fixed;
+  display: block;
+  min-width: 20rem;
+  max-width: 100vw;
+  padding: 1.25rem;
+  color: #202020;
+  background-color: #fff;
+  text-align: left;
+  box-shadow: 0 .2em .1em rgba(0, 0, 0, .3);
+  transition: transform .3s, opacity .3s;
+  transform: translateY(0);
+  z-index: 1;
+
+  p {
+    max-width: 20rem;
+  }
+
+  > .arrow {
+    content: '';
+    position: absolute;
+    border: .8em solid transparent;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  &[hidden] {
+    display: block !important;
+    opacity: 0;
+    transform: translateY(-1em);
+    pointer-events: none;
+  }
+
+  &[position="bottom"] > .arrow {
+    top: 0;
+    border-bottom-color: #fff;
+    transform: translateY(-100%);
+  }
+
+  &[position="top"] > .arrow {
+    bottom: 0;
+    border-top-color: #fff;
+    transform: translateY(100%);
+  }
+}

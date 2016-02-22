@@ -1,0 +1,13 @@
+User-agent: *
+
+Disallow: /no-ie
+
+# Rate Limiting
+Disallow: /games/lol/summoners/*/*/current
+Disallow: /games/lol/summoners/*/*/runes
+Disallow: /games/lol/summoners/*/*/champions
+Disallow: /games/lol/summoners/*/*/masteries
+
+Disallow: /games/lol/summoners/compare?*
+
+Sitemap: http://www.ganked.net/sitemap.xml

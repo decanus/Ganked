@@ -1,0 +1,25 @@
+.mastery-box {
+  > .title {
+    color: $primary-color;
+    display: flex;
+  }
+
+  > .title > .counter,
+  > .title > .name {
+    margin: 0;
+    padding: ($gap-size / 2) $gap-size;
+  }
+
+  > .title > .counter {
+    background-color: currentColor;
+    color: #fff;
+  }
+
+  > .title > .name {
+    color: inherit;
+  }
+
+  @include mastery-box('ferocity', $color-red);
+  @include mastery-box('cunning', $color-purple);
+  @include mastery-box('resolve', $color-green);
+}

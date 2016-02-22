@@ -1,0 +1,100 @@
+.page-header {
+  display: flex;
+  justify-content: center;
+  transition: background-color .1s;
+  width: 100%;
+  z-index: 20;
+
+  %gap-item {
+    padding: .625em;
+  }
+
+  %flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &.-fixed {
+    position: fixed;
+  }
+
+  > .inner {
+    @extend %flex-wrap;
+    max-width: 74.5rem;
+    width: 100%;
+    padding: 14px 12px;
+    align-items: center;
+    transition: all .1s;
+
+    > .nav,
+    > .logo,
+    > .search {
+      @extend %gap-item;
+      flex-shrink: 0;
+    }
+
+    > .logo {
+      height: strip-unit($gap-size) * 18 + 48px;
+      display: block;
+      padding: (strip-unit($gap-size / 2) * 18 + 5px) ($gap-size / 2);
+    }
+
+    > .logo * {
+      height: 100%;
+    }
+
+    > .search {
+      flex-grow: 1000;
+      justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    > .nav {
+      flex-grow: 1;
+    }
+
+    > .nav > ul {
+      @extend %flex-wrap;
+      justify-content: flex-end;
+      margin: -0.625rem;
+    }
+
+    > .nav > ul > li {
+      @extend %gap-item;
+    }
+
+    > .nav > ul > li > a {
+      @extend %header-text;
+
+      &.-active,
+      &:hover {
+        text-decoration: none;
+        border-bottom: 3px solid $primary-color;
+      }
+    }
+  }
+
+  @mixin move-search($selector: '') {
+    > .inner > .search#{$selector} {
+      order: 3;
+      width: 100%;
+    }
+
+    > .inner > .search#{$selector} > .grid {
+      justify-content: flex-end;
+    }
+  }
+
+  @media (max-width: 61rem) {
+    > .inner > .search {
+      justify-content: flex-end;
+    }
+
+    @include move-search();
+  }
+
+  @media (max-width: 1135px) {
+    @include move-search('.-is-comparing');
+  }
+}

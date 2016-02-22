@@ -1,0 +1,13 @@
+/**
+ * (c) 2015 Ganked <feedback@ganked.net>
+ */
+
+%flow-box {
+  > %flow-element:first-child {
+    margin-top: 0;
+  }
+
+  > %flow-element:last-child {
+    margin-bottom: 0;
+  }
+}

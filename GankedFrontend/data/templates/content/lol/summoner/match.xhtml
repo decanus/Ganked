@@ -1,0 +1,186 @@
+<article class="generic-box -normal-padding" id="box">
+
+    <header>
+        <div class="grid-wrapper -gap -space-between">
+
+            <div class="item -center">
+                <div class="grid-wrapper -gap">
+                    <div class="item -center">
+                        <small id="gameStatus" class="_caps" />
+                    </div>
+
+                    <div class="item -center">
+                        <small id="duration"/>
+                    </div>
+
+                    <div class="item -center">
+                        <small>
+                            <time is="relative-time" id="date" datetime="" class="_dim"/>
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item -center">
+                <div class="grid-wrapper -gap">
+                    <div class="item -center">
+                        <small id="gameLevel"/>
+                    </div>
+                    <div class="item -center">
+                        <small id="gameMode"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="grid-wrapper -gap -center _center">
+        <div class="item -center -max">
+            <div class="summoner-match-info">
+                <div class="champion">
+                    <a class="avatar-box -match" href="" id="championLink" data-info-box="info-box">
+                        <img class="image" src="" alt="" id="championImage"/>
+                    </a>
+
+                    <info-box hidden="">
+                        <h3 id="championName" class="_noMargin"/>
+
+                        <p id="championDescription" class="_noMargin"/>
+                    </info-box>
+                </div>
+                <div class="kdaratio">
+                    <h4 id="gameKdaRatio" class="_noMargin"/>
+                </div>
+                <div class="kda">
+                    <span id="gameKda" class="_dim" />
+                </div>
+            </div>
+        </div>
+
+        <div class="item -center">
+            <small class="match-number">
+                <img src="//cdn.ganked.net/images/lol/icon/minion.png" alt="CS" class="image" />
+                <span id="minions" class="text"/>
+            </small>
+            <small class="match-number">
+                <img src="//cdn.ganked.net/images/lol/icon/gold.png" alt="gold" class="image" />
+                <span id="gold" class="text"/>
+            </small>
+        </div>
+
+        <div class="item -center -grow">
+            <div class="grid-wrapper -gap -center">
+                <div class="item">
+                    <figure class="summoner-item" id="item0" data-info-box="info-box"/>
+                    <info-box hidden="">
+                        <h3 id="item0name" class="_noMargin"/>
+
+                        <p id="item0description"/>
+
+                        <p id="item0gold" class="_blue"/>
+                    </info-box>
+                </div>
+                <div class="item">
+                    <figure class="summoner-item" id="item1" data-info-box="info-box"/>
+                    <info-box hidden="">
+                        <h3 id="item1name" class="_noMargin"/>
+
+                        <p id="item1description"/>
+
+                        <p id="item1gold" class="_blue"/>
+                    </info-box>
+                </div>
+                <div class="item">
+                    <figure class="summoner-item" id="item2" data-info-box="info-box"/>
+                    <info-box hidden="">
+                        <h3 id="item2name" class="_noMargin"/>
+
+                        <p id="item2description"/>
+
+                        <p id="item2gold" class="_blue"/>
+                    </info-box>
+                </div>
+                <div class="item">
+                    <figure class="summoner-item" id="item3" data-info-box="info-box"/>
+                    <info-box hidden="">
+                        <h3 id="item3name" class="_noMargin"/>
+
+                        <p id="item3description"/>
+
+                        <p id="item3gold" class="_blue"/>
+                    </info-box>
+                </div>
+                <div class="item">
+                    <figure class="summoner-item" id="item4" data-info-box="info-box"/>
+                    <info-box hidden="">
+                        <h3 id="item4name" class="_noMargin"/>
+
+                        <p id="item4description"/>
+
+                        <p id="item4gold" class="_blue"/>
+                    </info-box>
+                </div>
+                <div class="item">
+                    <figure class="summoner-item" id="item5" data-info-box="info-box"/>
+                    <info-box hidden="">
+                        <h3 id="item5name" class="_noMargin"/>
+
+                        <p id="item5description"/>
+
+                        <p id="item5gold" class="_blue"/>
+                    </info-box>
+                </div>
+                <div class="item">
+                    <figure class="summoner-item" id="item6" data-info-box="info-box"/>
+                    <info-box hidden="">
+                        <h3 id="item6name" class="_noMargin"/>
+
+                        <p id="item6description"/>
+
+                        <p id="item6gold" class="_blue"/>
+                    </info-box>
+                </div>
+            </div>
+        </div>
+
+        <div class="item -center _center">
+            <small>
+                <a href="" id="matchLink" title="Match Overview">
+                    <span class="octicon octicon-graph" />
+                </a>
+            </small>
+        </div>
+    </div>
+
+    <footer class="summoner-match-footer">
+        <div class="grid-wrapper -gap -space-between">
+            <div class="item">
+                <small>
+                    <span id="wardsBought" class="_blue"/>
+                    <span class="_dim">Wards bought</span>
+                </small>
+            </div>
+            <div class="item">
+                <small>
+                    <span id="wardsPlaced" class="_blue"/>
+                    <span class="_dim">Wards placed</span>
+                </small>
+            </div>
+            <div class="item">
+                <small>
+                    <span id="damageDealtToChampions" class="_blue"/>
+                    <span class="_dim">Damage To Champions</span>
+                </small>
+            </div>
+            <div class="item">
+                <small>
+                    <span id="damageTaken" class="_blue"/>
+                    <span class="_dim">Damage Taken</span>
+                </small>
+            </div>
+            <div class="item" id="roleWrapper">
+                <small><span id="role" class="_blue"/></small>
+            </div>
+        </div>
+    </footer>
+</article>

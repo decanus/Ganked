@@ -1,0 +1,13 @@
+.stats-box {
+  > .row > .title {
+    padding: .4rem $gap-size;
+    background-color: $primary-color;
+    color: #fff;
+  }
+
+  > .row > .content {
+    color: $primary-color;
+    padding: .6rem;
+    text-align: center;
+  }
+}

@@ -1,0 +1,7 @@
+button {
+  cursor: pointer;
+}
+
+button:not(.plain-button) {
+  @extend %button;
+}

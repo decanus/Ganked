@@ -1,0 +1,26 @@
+.homepage-content {
+  > .lines {
+    @include wrapper($homepage-wrap-width);
+    background-repeat: no-repeat;
+
+    &.-top {
+      $offset-right: ($homepage-image-width / 2 - $homepage-line-width + $gap-size);
+
+      height: 17.9em;
+      background-image: $homepage-vertical-gradient, $homepage-horizontal-gradient;
+      background-size: $homepage-line-width 100%, calc(50% - #{$offset-right}) $homepage-line-width;
+      background-position: center 0, right $offset-right bottom 0;
+    }
+
+    &.-bottom {
+      height: $homepage-line-width;
+      background-image: linear-gradient(to right, #fff, $primary-color);
+      background-size: calc(100% - #{$homepage-image-width + $gap-size * 2 - $homepage-line-width}) 100%;
+      background-position: center 0;
+    }
+
+    @media #{$media-query-tablet} {
+      display: none;
+    }
+  }
+}

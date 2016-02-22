@@ -1,0 +1,35 @@
+.input-wrap {
+  text-align: left;
+  max-width: 100%;
+
+  &.-grow {
+    width: 100%;
+  }
+
+  > .inner {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  > .inner > .label {
+    text-transform: uppercase;
+  }
+
+  > .inner > .input {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  > .message {
+    font-size: .8em;
+  }
+
+  &.-error > .message {
+    color: $color-red;
+  }
+
+  &.-success > .message {
+    color: $color-green;
+  }
+}

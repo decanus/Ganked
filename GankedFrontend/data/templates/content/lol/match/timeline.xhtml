@@ -1,0 +1,29 @@
+<div class="match-timeline-player">
+    <div class="champion">
+        <a href="" id="championLink" class="avatar-box -match-overview" data-info-box="info-box">
+            <img src="" alt="" id="championImage" class="image"/>
+
+            <info-box hidden="">
+                <h3 id="championName" class="_noMargin"/>
+                <p id="championTitle" class="_noMargin"/>
+            </info-box>
+        </a>
+    </div>
+
+    <div class="name">
+        <p class="_noMargin" id="playerName"/>
+
+        <p class="_noMargin">
+            <small class="_dim" id="playerLane"/>
+        </p>
+    </div>
+
+    <timeline-value class="minions" id="minions" key="minionsKilled" title="Minions Killed" />
+    <timeline-value class="gold" id="gold" key="currentGold" title="Gold" />
+
+    <div class="kda">
+        <timeline-value class="kda" key="kills" id="kills" title="Kills" />/<timeline-value class="kda" key="deaths" id="deaths" title="Deaths" />/<timeline-value class="kda" key="assists" id="assists" title="Assists" />
+    </div>
+    <div class="ward" id="ward" />
+    <ul class="items" id="items" />
+</div>

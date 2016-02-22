@@ -1,0 +1,87 @@
+._center {
+  text-align: center;
+}
+
+._right {
+  text-align: right;
+}
+
+._no-caps {
+  text-transform: none;
+}
+
+._small {
+  font-size: 0.777em;
+}
+
+._caps {
+  text-transform: uppercase;
+}
+
+._pullRight {
+  float: right;
+}
+
+._inline-block {
+  display: inline-block;
+}
+
+._block {
+  display: block;
+}
+
+._dim {
+  color: #fff;
+  opacity: .5;
+}
+
+._smallGap {
+  margin-top: ($gap-size / 2) !important;
+}
+
+._blue {
+  color: $color-blue;
+}
+
+._green {
+  color: $color-green;
+}
+
+._red {
+  color: $color-red;
+}
+
+._grey {
+  color: $color-grey;
+}
+
+._textLimit {
+  max-width: 30rem;
+}
+
+._gap-after {
+  margin-bottom: ($box-gap * 2);
+}
+
+._gap-after-large {
+  margin-bottom: 1rem;
+}
+
+._dashed-underline {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-underline-position: under;
+}
+
+._noMargin,
+._no-margin {
+  margin: 0 !important;
+}
+
+._slide-in-left {
+  animation: fade-in-left .7s;
+}
+
+._slide-in-right {
+  animation: fade-in-right .7s;
+}

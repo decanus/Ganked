@@ -1,0 +1,9 @@
+.lead-text {
+  font-size: 1.05em;
+  margin: 2em 0;
+
+  &.-thin {
+    width: 40rem;
+    max-width: 100%;
+  }
+}

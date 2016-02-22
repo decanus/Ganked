@@ -1,0 +1,159 @@
+<div class="page-wrap -padding">
+    <time-line id="timeline">
+        <div class="grid-wrapper -gap -no-wrap">
+            <div class="item -half -shrink">
+                <header class="grid-wrapper -gap -space-between">
+                    <div class="item -center">
+                        <h3 id="blue-gameStatus" class="_red">Defeat</h3>
+                    </div>
+                    <div class="item -center" id="blue-banned-wrapper">
+                        <div class="grid-wrapper -gap -end">
+                            <div class="item -center">
+                                <small>Banned</small>
+                            </div>
+                            <div class="item -center">
+                                <div class="grid-wrapper -gap" id="blue-banned"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item -center">
+                        <div class="color-circle -blue"/>
+                    </div>
+                </header>
+                <div class="grid-wrapper -gap -space-between">
+                    <div class="item -center match-number">
+                        <img src="//cdn.ganked.net/images/lol/icon/baron.png" class="image"/>
+                        <timeline-value key="barons:blue" id="blue-baronKills" class="text"/>
+                    </div>
+
+                    <div class="item -center match-number">
+                        <img src="//cdn.ganked.net/images/lol/icon/dragon.png" class="image"/>
+                        <timeline-value key="dragons:blue" id="blue-dragonKills" class="text"/>
+                    </div>
+
+                    <div class="item -center match-number">
+                        <img src="//cdn.ganked.net/images/lol/icon/tower.png" class="image"/>
+                        <timeline-value key="towers:blue" id="blue-towerKills" class="text"/>
+                    </div>
+
+                    <div class="item -center match-number">
+                        <img src="//cdn.ganked.net/images/lol/icon/gold.png" class="image"/>
+                        <span id="blue-gold" class="text">--</span>
+                    </div>
+
+                    <div class="item -center match-number">
+                        <span id="blue-totalKills" class="text"/>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="//cdn.ganked.net/images/lol/icon/score.png"/>
+            </div>
+            <div class="item -half -shrink" id="team-purple">
+                <header class="grid-wrapper -gap -space-between">
+                    <div class="item -center">
+                        <div class="color-circle -purple"/>
+                    </div>
+                    <div class="item -center" id="purple-banned-wrapper">
+                        <div class="grid-wrapper -gap -end">
+                            <div class="item -center">
+                                <div class="grid-wrapper -gap" id="purple-banned"/>
+                            </div>
+                            <div class="item -center">
+                                <small>Banned</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item -center">
+                        <h3 id="purple-gameStatus" class="_red">Defeat</h3>
+                    </div>
+                </header>
+                <div class="grid-wrapper -gap -space-between">
+                    <div class="item -center match-number">
+                        <span id="purple-totalKills" class="text"/>
+                    </div>
+
+                    <div class="item -center match-number">
+                        <span id="purple-gold" class="text">--</span>
+                        <img src="//cdn.ganked.net/images/lol/icon/gold.png" class="image"/>
+                    </div>
+
+                    <div class="item -center match-number">
+                        <timeline-value key="towers:purple" id="purple-towerKills" class="text"/>
+                        <img src="//cdn.ganked.net/images/lol/icon/tower.png" class="image"/>
+                    </div>
+
+                    <div class="item -center match-number">
+                        <timeline-value key="dragons:purple" id="purple-dragonKills" class="text"/>
+                        <img src="//cdn.ganked.net/images/lol/icon/dragon.png" class="image"/>
+                    </div>
+
+                    <div class="item -center match-number">
+                        <timeline-value key="barons:purple" id="purple-baronKills" class="text"/>
+                        <img src="//cdn.ganked.net/images/lol/icon/baron.png" class="image"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="page-section">
+
+            <div class="match-timeline">
+                <div class="team" id="blue-players">
+                    <div class="match-timeline-player">
+                        <div class="minions">
+                            <img src="//cdn.ganked.net/images/lol/icon/minion.png" class="image"/>
+                        </div>
+                        <div class="gold">
+                            <img src="//cdn.ganked.net/images/lol/icon/gold.png" class="image"/>
+                        </div>
+                        <div class="kda">
+                            <img src="//cdn.ganked.net/images/lol/icon/score.png" class="image"/>
+                        </div>
+                        <div class="ward"></div>
+                        <div class="items"></div>
+                    </div>
+                </div>
+                <div class="team" id="purple-players">
+                    <div class="match-timeline-player -mirror">
+                        <div class="minions">
+                            <img src="//cdn.ganked.net/images/lol/icon/minion.png" class="image"/>
+                        </div>
+                        <div class="gold">
+                            <img src="//cdn.ganked.net/images/lol/icon/gold.png" class="image"/>
+                        </div>
+                        <div class="kda">
+                            <img src="//cdn.ganked.net/images/lol/icon/score.png" class="image"/>
+                        </div>
+                        <div class="ward"></div>
+                        <div class="items"></div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="page-section" id="timeline-controls">
+                <div class="grid-wrapper -gap">
+                    <div class="item -center">
+                        <h4 class="_no-margin">
+                            <timeline-value key="time">00:00</timeline-value>
+                        </h4>
+                        <small>
+                            <timeline-value key="speed">1x</timeline-value>
+                        </small>
+                    </div>
+                    <div class="item -center">
+                        <button data-action="time-line:play"><span class="octicon octicon-playback-play"/></button>
+                        <button class="-active" data-action="time-line:pause" hidden=""><span
+                                class="octicon octicon-playback-pause"/></button>
+                        <button data-action="time-line:slowdown"><span class="octicon octicon-playback-rewind"/>
+                        </button>
+                        <button data-action="time-line:speedup"><span class="octicon octicon-playback-fast-forward"/>
+                        </button>
+                    </div>
+                    <div class="item -center -grow">
+                        <input type="range" is="timeline-scrubber"/>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </time-line>
+</div>

@@ -1,0 +1,10 @@
+{
+  "ADMIN_EMAIL": "webmaster@ganked.net",
+  "PHP_VERSION": "{PHP_56_LATEST}",
+  "WEB_SERVER": "nginx",
+  "PHP_EXTENSIONS": ["curl", "openssl", "redis", "mongo", "xsl", "mbstring"],
+  "PHP_MODULES": ["cli", "fpm"],
+  "ADDITIONAL_PREPROCESS_CMDS": [
+    "php app/htdocs/GankedFrontend/scripts/configBuilder.php"
+  ]
+}

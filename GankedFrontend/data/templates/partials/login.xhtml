@@ -1,0 +1,46 @@
+<div>
+    <div class="grid-wrapper -gap -space-between">
+        <div class="item -center">
+            <h1>Sign In</h1>
+        </div>
+        <div class="item -center">
+            <button data-role="modal:close" type="button">
+                x
+            </button>
+        </div>
+    </div>
+
+    <form is="ajax-form" action="//post.ganked.net/action/login" method="post" novalidate="">
+
+        <fieldset class="form-group">
+            <div class="input-wrap -grow">
+                <label class="inner">
+                    <span class="label">Email</span>
+                    <input class="input" type="email" placeholder="Email" name="email"/>
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <div class="input-wrap -grow">
+                <label class="inner">
+                    <span class="label">Password <small><a href="/forgot-password">Forgot?</a></small></span>
+                    <input class="input" type="password" placeholder="••••••••" name="password"/>
+                </label>
+            </div>
+        </fieldset>
+
+        <input type="hidden" name="token"/>
+
+        <br />
+
+        <button type="submit" is="action-button" active-text="Redirecting..." disable-active="">
+            <span class="text">Sign In</span>
+            <span class="spinner"></span>
+        </button>
+
+        <br/>
+
+        <a href="/register">Create Account</a>
+    </form>
+</div>

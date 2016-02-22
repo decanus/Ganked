@@ -1,0 +1,12 @@
+.page-footer {
+  > .inner {
+    @include wrapper(33rem);
+    padding: 3.5em $gap-size;
+    line-height: 1.45;
+
+    > .meta {
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}

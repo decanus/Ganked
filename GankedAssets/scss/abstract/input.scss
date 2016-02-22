@@ -1,0 +1,10 @@
+%input {
+  @extend %form-element;
+
+  appearance: none;
+  color: $secondary-color;
+  background-color: #fff;
+  display: inline-block;
+  border-radius: 0;
+  text-transform: none;
+}

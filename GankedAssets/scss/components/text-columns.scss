@@ -1,0 +1,20 @@
+.text-columns {
+  column-count: 1;
+  column-gap: ($box-gap-larger * 2);
+
+  &.-list {
+    line-height: 1.7;
+  }
+
+  @media(min-width: #{$media-tablet}) {
+    &:not(.-single) {
+      column-count: 2;
+    }
+  }
+
+  @media(min-width: #{$media-normal-screen}) {
+    &:not(.-single) {
+      column-count: 3;
+    }
+  }
+}

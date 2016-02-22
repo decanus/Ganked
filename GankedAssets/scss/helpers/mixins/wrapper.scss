@@ -1,0 +1,17 @@
+//
+// Creates a wrapper for a given width adding the padding
+// to the width.
+//
+@mixin wrapper($width, $paddingH: $gap-size, $paddingV: -1) {
+  width: ($width + $paddingH * 2);
+  max-width: 100%;
+
+  @if $paddingV < 0 {
+    padding-left: $paddingH;
+    padding-right: $paddingH;
+  } @else {
+    padding: $paddingV $paddingH;
+  }
+
+  margin: auto;
+}

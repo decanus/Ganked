@@ -1,0 +1,10 @@
+127.0.0.1   lovelybox localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+# Ganked
+127.0.0.1 services.ganked.net
+127.0.0.1 dev.api.ganked.net
+127.0.0.1 dev.fetch.ganked.net
+::1       services.ganked.net
+127.0.0.1 services.ganked.net
+46.101.64.103 live-cdn.ganked.net

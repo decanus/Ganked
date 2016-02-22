@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "title": "Counter-Strike: Global Offensive",
+    "description": "Ganked.net is the best site for statistics across a range of multiple games.",
+    "image": "http://cdn.ganked.net/favicon/android-chrome-192x192.png"
+  },
+  "content": {
+    "replace": {
+      "main": "content.xhtml",
+      "landing-header": "../../../partials/landing-header.xhtml"
+    }
+  },
+  "text": {
+    "gameName": "Counter-Strike: Global Offensive"
+  },
+  "classes": {
+    "landing-header": "landing-header -csgo"
+  },
+  "attributes": {
+    "twitch-player": {
+      "data-game": "Counter-Strike: Global Offensive"
+    }
+  },
+  "fetch": {
+    "twitch-player": {
+      "href": "/fetch/getStream"
+    }
+  }
+}

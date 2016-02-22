@@ -1,0 +1,16 @@
+%form-element {
+  @extend %flow-element;
+
+  padding: .8rem 1rem;
+  margin: .5em 0;
+
+  &.-smaller {
+    height: 3em;
+    font-size: .9em;
+  }
+
+  &.-no-margin,
+  &.-noMargin {
+    margin: 0;
+  }
+}

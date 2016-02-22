@@ -1,0 +1,11 @@
+@keyframes twitch-player-border {
+  0% {
+    border-left-color: darken(#fff, 20%);
+  } 25% {
+    border-top-color: darken(#fff, 20%);
+  } 50% {
+    border-right-color: darken(#fff, 20%);
+  } 75% {
+    border-bottom-color: darken(#fff, 20%);
+  }
+}

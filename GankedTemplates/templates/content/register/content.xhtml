@@ -1,0 +1,63 @@
+<div class="generic-box -fit -center">
+    <h1>Register</h1>
+
+    <form action="//post.ganked.net/action/register" method="post" is="ajax-form" novalidate="" autocomplete="off" on-success="remove-inputs">
+
+        <fieldset class="form-group">
+            <div class="input-wrap">
+                <label class="inner">
+                    <span class="label">Email</span>
+                    <input class="input -big" type="email" placeholder="Email" name="email"/>
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <div class="input-wrap">
+                <label class="inner">
+                    <span class="label">Username</span>
+                    <input class="input -big" type="text" placeholder="Username" name="username"/>
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <div class="input-wrap">
+                <label class="inner">
+                    <span class="label">First Name</span>
+                    <input class="input -big" type="text" placeholder="First Name" name="firstName" />
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <div class="input-wrap">
+                <label class="inner">
+                    <span class="label">Last Name</span>
+                    <input class="input -big" type="text" placeholder="Last Name" name="lastName" autocomplete="off" />
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <div class="input-wrap">
+                <label class="inner">
+                    <span class="label">Password</span>
+                    <input class="input -big" type="password" placeholder="••••••••" name="password" autocomplete="off"/>
+                </label>
+            </div>
+        </fieldset>
+
+        <input type="hidden" name="token"/>
+
+        <p>
+            By clicking on "Create account" below, you are agreeing to the <br/>
+            <a href="/terms">Terms of Service</a> and the <a href="/privacy">Privacy Policy</a>.
+        </p>
+
+        <button class="submit" type="submit" is="action-button" active-text="Account Created" disable-active="">
+            <span class="text">Create Account</span>
+            <span class="spinner"></span>
+        </button>
+    </form>
+</div>

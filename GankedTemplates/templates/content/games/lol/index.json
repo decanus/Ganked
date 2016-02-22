@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "League of Legends",
+    "description": "Check out your League of Legends statistics, explore lol champions and watch streams.",
+    "image":"http://cdn.ganked.net/favicon/android-chrome-192x192.png"
+  },
+  "content": {
+    "replace": {
+      "main": "content.xhtml",
+      "landing-header": "header.xhtml"
+    }
+  },
+  "text": {
+    "gameName": "League of Legends"
+  }
+}

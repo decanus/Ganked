@@ -1,0 +1,21 @@
+//
+// Todo: This probably needs cleanup, but as streams will be removed someday, i'm not gonna do it.
+//
+.twitch-stream-list {
+  display: flex;
+  transition: all .3s ease-in-out;
+  margin: 0 (-$gap-size);
+
+  > .stream {
+    width: calc(100% / 3);
+    padding: $gap-size;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+}
+
+.twitch-streams {
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}

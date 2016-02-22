@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "title": "News",
+    "description": "Get a curated list of news articles on Ganked.net, for the best articles from all games.",
+    "image":"http://cdn.ganked.net/favicon/android-chrome-192x192.png"
+  },
+  "content": {
+    "append": {
+      "main": "content.xhtml"
+    }
+  },
+  "classes": {
+    "main": "page-wrap -padding"
+  }
+}

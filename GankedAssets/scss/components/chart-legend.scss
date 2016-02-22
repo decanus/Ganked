@@ -1,0 +1,11 @@
+.chart-legend {
+  display: flex;
+  align-items: center;
+
+  > .color {
+    width: 2rem;
+    height: 2rem;
+    border-radius: .4rem;
+    margin: .5rem;
+  }
+}

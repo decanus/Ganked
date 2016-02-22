@@ -1,0 +1,13 @@
+body {
+  background-color: $secondary-color;
+  // the slide-in animations on the homepage cause
+  // some issues with the viewport on Ipad devices
+  // the following code fixes this bug
+  width: 100%;
+  overflow-x: hidden;
+
+  &.-landing {
+    background: $secondary-color url(#{$cdn-path}/images/homepage/top.jpg) no-repeat;
+    background-size: 100% auto;
+  }
+}

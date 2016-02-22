@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "title": "Forgot Password",
+    "description": "Ganked.net is the best site for statistics across a range of multiple games."
+  },
+  "content": {
+    "append": {
+      "main": "content.xhtml"
+    }
+  },
+  "classes": {
+    "main": "page-wrap -padding"
+  }
+}

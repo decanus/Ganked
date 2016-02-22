@@ -1,0 +1,93 @@
+.feature-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+
+  > .space {
+    flex: 1;
+  }
+
+  > .inner {
+    @extend %homepage-lines;
+    @include wrapper($homepage-wrap-width);
+    display: flex;
+    justify-content: space-between;
+    background-size: ($homepage-image-width / 2 + $gap-size + $homepage-line-width) $homepage-line-width;
+    background-image: $homepage-horizontal-gradient;
+
+    > .image,
+    > .content {
+      align-self: center;
+    }
+
+    > .image {
+      @extend %homepage-lines;
+      flex-shrink: 0;
+      background-image: linear-gradient(#fff, $primary-color);
+      background-size: $homepage-line-width 100%, calc(100% - #{$homepage-image-width / 2}) $homepage-line-width;
+      background-position: center, 0 center;
+      padding: 15em 0;
+      width: $homepage-image-width;
+
+      @media #{$media-query-tablet} {
+        padding: 0;
+        width: 10em;
+        flex-shrink: 1;
+      }
+
+      @media #{$media-query-phone} {
+        display: none;
+      }
+    }
+
+    > .content {
+      max-width: 26rem;
+      flex-shrink: 2;
+    }
+
+    > .content > .button {
+      margin-top: 2.77em;
+    }
+  }
+
+  &.-first {
+    > .space.-after {
+      @extend %homepage-horizontal-bg;
+    }
+
+    > .inner {
+      background-position: right 0 center;
+    }
+
+    > .inner > .image {
+      padding-left: $gap-size;
+    }
+  }
+
+  &.-last {
+    > .space.-before {
+      @extend %homepage-horizontal-bg;
+    }
+
+    > .inner {
+      background-position: left 0 center;
+      background-image: linear-gradient(to left, $primary-color, #fff);
+    }
+
+    > .inner > .image {
+      padding-right: $gap-size;
+    }
+
+    > .inner > .image {
+      background-image:
+        linear-gradient(#fff, $primary-color, transparent),
+        linear-gradient($secondary-color, $secondary-color);
+
+      background-position: center, right 0 center;
+    }
+  }
+
+  @media #{$media-query-tablet} {
+    margin-top: 4rem;
+  }
+}

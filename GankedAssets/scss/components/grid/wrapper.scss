@@ -1,0 +1,150 @@
+.grid-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.-full {
+    width: 100%;
+  }
+
+  &.-flow-element {
+    @extend %flow-element;
+  }
+
+  &.-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &.-center {
+    justify-content: center;
+  }
+
+  &.-end {
+    justify-content: flex-end;
+  }
+
+  &.-space-between {
+    justify-content: space-between;
+  }
+
+  &.-stretch {
+    justify-content: stretch;
+  }
+
+  &.-noWrap,
+  &.-no-wrap {
+    flex-wrap: nowrap;
+  }
+
+  &.-gap {
+    @include grid-gap-variant($box-gap);
+  }
+
+  &.-larger-gap {
+    @include grid-gap-variant($box-gap-larger);
+  }
+
+  > .item {
+    &.-third {
+      flex-basis: calc(100% / 3);
+    }
+
+    &.-half {
+      flex-basis: 50%;
+    }
+
+    &.-quarter {
+      flex-basis: 25%;
+    }
+
+    &.-fifth {
+      flex-basis: 20%;
+    }
+
+    &.-twothird,
+    &.-twoThird {
+      flex-basis: calc(100% * 2 / 3);
+    }
+
+    &.-end {
+      align-self: flex-end;
+    }
+
+    &.-stretch {
+      align-self: stretch;
+    }
+
+    &.-center {
+      align-self: center;
+    }
+
+    &.-grow {
+      flex-grow: 1;
+    }
+
+    &.-grow2 {
+      flex-grow: 2;
+    }
+
+    &.-greedy {
+      flex-grow: 1000;
+    }
+
+    &.-shrink {
+      flex-shrink: 1;
+    }
+
+    &.-no-shrink {
+      flex-shrink: 0;
+    }
+
+    &.-flex {
+      display: flex;
+    }
+
+    &.-max {
+      max-width: 100%;
+    }
+
+    &.-clip-text {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      // required, otherwise the text would somehow still expand for some reason
+      // and force other elements to shrink even if they're not flex-shrink
+      flex-shrink: 100;
+    }
+  }
+
+  &.-column {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  @media #{$media-query-small-screen} {
+    &.-type-a > .item.-quarter {
+      flex-basis: 50%;
+    }
+
+    &.-type-a > .item.-fifth {
+      flex-basis: calc(100% / 3);
+    }
+  }
+
+  @media #{$media-query-tablet} {
+    &.-type-a > .item.-third,
+    &.-type-a > .item.-twothird,
+    &.-type-a > .item.-fifth {
+      flex-basis: 50%;
+    }
+  }
+
+  @media #{$media-query-phone} {
+    &.-type-a > .item,
+    &.-type-a > .item.-twothird,
+    &.-type-a > .item.-third,
+    &.-type-a > .item.-quarter,
+    &.-type-a > .item.-fifth {
+      flex-basis: 100%;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.free-champions {
+  display: flex;
+  margin: -0.625rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 100%;
+
+  > .item {
+    padding: .625rem;
+  }
+
+  @media(max-width: 885px) {
+    justify-content: center;
+    width: 442px;
+    margin: auto;
+  }
+}

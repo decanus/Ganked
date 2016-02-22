@@ -1,0 +1,33 @@
+.rounded-button {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  width: 2em;
+  border-radius: 100%;
+  background-color: $primary-color;
+  color: #fff;
+  margin: .2em;
+  padding: .35em;
+  text-align: center;
+  font-size: 1.3em;
+
+  &:hover {
+    color: #fff;
+  }
+
+  > .fa {
+    line-height: 1.4;
+  }
+
+  &.-green {
+    background-color: $color-green;
+  }
+
+  &.-red {
+    background-color: $color-red;
+  }
+
+  &.-yellow {
+    background-color: $color-yellow;
+  }
+}

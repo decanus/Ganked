@@ -1,0 +1,40 @@
+.champion-table {
+  $image-width: 68px;
+
+  %row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: -7px;
+
+    @include champion-table-field('matches', 100px);
+    @include champion-table-field('score', 100px);
+    @include champion-table-field('kda', 100px);
+    @include champion-table-field('gold', 100px);
+    @include champion-table-field('cs', 100px);
+    @include champion-table-field('image', $image-width);
+  }
+
+  %row > .name {
+    padding: 7px;
+    flex-grow: 1;
+
+    @media (max-width: 600px) {
+      flex-basis: calc(100% -  #{$image-width});
+    }
+  }
+
+  > .header {
+    @extend %row;
+
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding: 10px 0;
+  }
+
+  > .champion {
+    @extend %row;
+
+    margin: 0 -7px;
+  }
+}

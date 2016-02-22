@@ -1,0 +1,13 @@
+$media-phone: 44.5em;
+$media-query-phone: "(max-width: #{$media-phone})";
+
+$media-tablet: 50em;
+$media-query-tablet: "(max-width: #{$media-tablet})";
+
+$media-phone-s: 20em;
+$media-query-phone-s: "(max-device-width: #{$media-phone-s}), (max-width: #{$media-phone-s})";
+
+$media-small-screen: 60em;
+$media-query-small-screen: "(max-width: #{$media-small-screen})";
+
+$media-normal-screen: 72rem;

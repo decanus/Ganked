@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GankedServices" default="deploy">
+
+    <include file="../deploy.xml" as="deployment"/>
+
+    <property environment="env"/>
+
+    <target name="deploy">
+        <echo>Deploying GankedBackend</echo>
+
+        <antcall target="deployment.copyDependency">
+            <param name="dependency" value="GankedBackend"/>
+        </antcall>
+        <antcall target="deployment.copyDependency">
+            <param name="dependency" value="GankedSkeleton"/>
+        </antcall>
+        <antcall target="deployment.copyDependency">
+            <param name="dependency" value="GankedLibrary"/>
+        </antcall>
+        <antcall target="deployment.copyDependency">
+            <param name="dependency" value="GankedTemplates"/>
+        </antcall>
+
+
+        <antcall target="clean"/>
+        <antcall target="prepare"/>
+
+        <antcall target="deployment.push">
+            <param name="app" value="${env.JOB_NAME}" />
+        </antcall>
+
+        <antcall target="deployment.switch">
+            <param name="old" value="${env.JOB_NAME}" />
+            <param name="new" value="GankedBackend" />
+        </antcall>
+
+    </target>
+
+    <target name="clean">
+
+        <delete file="GankedBackend/config/system.ini"/>
+        <move file="GankedBackend/config/system.live.ini" tofile="GankedBackend/config/system.ini"/>
+
+    </target>
+    
+    <target name="prepare">
+        <move file="../.cfignore" tofile=".cfignore"/>    
+    </target>
+    
+</project>

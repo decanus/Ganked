@@ -1,0 +1,13 @@
+{
+  "bodyClass": "-landing",
+  "meta": {
+    "title": "Search",
+    "description": "Ganked.net search.",
+    "image":"http://cdn.ganked.net/favicon/android-chrome-192x192.png"
+  },
+  "content": {
+    "append": {
+      "main": "content.xhtml"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+%player-box {
+  @extend %generic-box;
+  display: inline-flex;
+  padding: ($gap-size / 2);
+  align-items: center;
+
+  &.-block {
+    display: flex;
+    width: 100%;
+  }
+
+  &.-no-background {
+    background-color: transparent;
+  }
+
+  > .image {
+    flex-shrink: 0;
+  }
+
+  > .image > .image {
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+  }
+
+  > .image,
+  > .content {
+    @extend %gap-item;
+  }
+
+  > .content {
+    flex-shrink: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  > .content > .title {
+    text-transform: none;
+    margin: 0;
+  }
+}

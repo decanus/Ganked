@@ -1,0 +1,15 @@
+@mixin mastery-box($name, $color) {
+  $name: '-' + $name;
+
+  &.#{$name} > .title {
+    color: $color;
+  }
+
+  &.#{$name} > .title > .counter {
+    background-color: $color;
+  }
+
+  &.#{$name} > .mastery-tree {
+    border-color: $color;
+  }
+}

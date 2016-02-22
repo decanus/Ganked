@@ -1,0 +1,8 @@
+.vertical-buttons {
+  display: flex;
+  flex-direction: column;
+
+  &.-summoner {
+    margin-top: 4.12em;
+  }
+}

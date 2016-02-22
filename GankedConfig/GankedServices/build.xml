@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GankedServices" default="deploy">
+
+    <include file="../deploy.xml" as="deployment"/>
+
+    <property environment="env"/>
+
+    <target name="deploy">
+        <echo>Deploying GankedServices</echo>
+
+        <antcall target="deployment.copyDependency">
+            <param name="dependency" value="GankedServices"/>
+        </antcall>
+        <antcall target="deployment.copyDependency">
+            <param name="dependency" value="GankedSkeleton"/>
+        </antcall>
+        <antcall target="deployment.copyDependency">
+            <param name="dependency" value="GankedLibrary"/>
+        </antcall>
+
+        <antcall target="clean"/>
+
+        <antcall target="deployment.push">
+            <param name="app" value="${env.JOB_NAME}" />
+        </antcall>
+
+        <antcall target="deployment.switch">
+            <param name="old" value="${env.JOB_NAME}" />
+            <param name="new" value="GankedServices" />
+        </antcall>
+
+    </target>
+
+    <target name="clean">
+
+        <move file="GankedServices/.htaccess" tofile=".htaccess"/>
+        <delete file="GankedServices/config/system.ini"/>
+        <move file="GankedServices/config/system.live.ini" tofile="GankedServices/config/system.ini"/>
+
+    </target>
+</project>

@@ -1,0 +1,46 @@
+.landing-header {
+  background-size: cover;
+  background-attachment: fixed;
+
+  $bg-overlay: linear-gradient(rgba($color-dark-blue, .5), rgba($color-dark-blue, .5));
+
+  &.-padding {
+    padding: $gap-size;
+  }
+
+  &.-lol {
+    background-image: $bg-overlay, $image-lol-bw;
+  }
+
+  &.-dota {
+    background-image: $bg-overlay, $image-dota-bw;
+  }
+
+  &.-csgo {
+    background-image: $bg-overlay, $image-csgo-bw;
+  }
+
+  &.-wow {
+    background-image: $bg-overlay, $image-wow-bw;
+  }
+
+  &.-crystal-scar {
+    background-image: $bg-overlay, $image-crystal-scar;
+  }
+
+  &.-howling-abyss {
+    background-image: $bg-overlay, $image-howling-abyss;
+  }
+
+  &.-summoners-rift {
+    background-image: $bg-overlay, $image-summoners-rift;
+  }
+
+  &.-the-twisted-treeline {
+    background-image: $bg-overlay, $image-the-twisted-treeline;
+  }
+
+  &.-butchers-bridge {
+    background-image: $bg-overlay, $image-butchers-bridge;
+  }
+}

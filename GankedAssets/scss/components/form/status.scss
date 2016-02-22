@@ -1,0 +1,11 @@
+.form-status {
+  margin-bottom: .5em;
+
+  &.-error {
+    color: $color-red;
+  }
+
+  &.-success {
+    color: $color-green;
+  }
+}

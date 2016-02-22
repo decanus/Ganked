@@ -1,0 +1,44 @@
+---
+memory: 128MB
+instances: 1
+buildpack: https://github.com/cloudfoundry/php-buildpack
+applications:
+ - name: GankedServices-release
+   host: gnkd-srvics
+   path: GankedServices
+   services:
+   - mongo
+   - dataPool
+   - lol-mongo
+
+ - name: GankedFetchFramework-release
+   host: gnkd-ftch
+   path: GankedFetchFramework
+   services:
+    - dataPool
+
+ - name: GankedPost-release
+   host: gnkd-pst
+   path: GankedPost
+   services:
+   - dataPool
+
+ - name: GankedFrontend-release
+   host: gnkd-frntnd
+   path: GankedFrontend
+   services:
+   - dataPool
+
+ - name: GankedBackend-release
+   host: gnkd-bknd
+   path: GankedBackend
+   services:
+    - dataPool
+
+ - name: GankedApi-release
+   host: gnkd-api
+   path: GankedApi
+   services:
+    - mongo
+    - dataPool
+

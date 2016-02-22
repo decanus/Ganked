@@ -1,0 +1,33 @@
+.search-suggestion {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: $gap-size;
+  background-color: #fff;
+  text-align: left;
+  transition: background-color .3s;
+
+  &:hover,
+  &:focus {
+    background-color: #D5E9F3;
+  }
+
+  > .image {
+    border-radius: 100%;
+    width: 2.3em;
+    height: 2.3em;
+  }
+
+  > .text {
+    padding-left: $gap-size;
+  }
+
+  > .text > .title,
+  > .text > .description {
+    margin: 0;
+  }
+
+  > .text > .description {
+    color: #878C90;
+  }
+}

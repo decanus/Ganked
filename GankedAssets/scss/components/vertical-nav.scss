@@ -1,0 +1,17 @@
+.vertical-nav {
+  display: flex;
+  flex-direction: column;
+  margin: .4em 0;
+
+  > .link {
+    padding: .8rem 1rem;
+    margin: .2em 0 0 0;
+    background-color: $tertiary-color;
+    border-left: .2rem solid transparent;
+
+    &.-active,
+    &:target {
+      border-color: $primary-color;
+    }
+  }
+}

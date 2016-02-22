@@ -1,0 +1,40 @@
+<div>
+    <div class="generic-box -fit -center">
+        <h1>Sign In</h1>
+
+        <form is="ajax-form" action="//post.ganked.net/action/login" method="post" novalidate="">
+
+            <fieldset class="form-group">
+                <div class="input-wrap">
+                    <label class="inner">
+                        <span class="label">Email</span>
+                        <input class="input -big" type="email" placeholder="Email" name="email" />
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="input-wrap">
+                    <label class="inner">
+                        <span class="label">Password <small><a href="/forgot-password">Forgot?</a></small></span>
+                        <input class="input -big" type="password" placeholder="••••••••" name="password" />
+                    </label>
+                </div>
+            </fieldset>
+
+            <input type="hidden" name="token"/>
+
+            <br/>
+
+            <button type="submit" is="action-button" active-text="Redirecting..." disable-active="">
+                <span class="text">Sign In</span>
+                <span class="spinner"></span>
+            </button>
+
+            <br />
+
+            <a href="/register">Create Account</a> or <operation action="steamLogin" />
+
+        </form>
+    </div>
+</div>

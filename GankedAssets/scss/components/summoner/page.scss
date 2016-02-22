@@ -1,0 +1,36 @@
+// todo: deprecate this component and replace it with .profile-page
+.summoner-page {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: -($gap-size / 2);
+
+  > .sidebar,
+  > .content {
+    padding: ($gap-size / 2);
+  }
+
+  > .sidebar {
+    flex: 16rem 0;
+  }
+
+  > .sidebar > .summoner {
+    margin: .5em 0 $gap-size 0;
+  }
+
+  > .sidebar > .nav {
+    margin-bottom: .8rem;
+  }
+
+  > .content {
+    flex: 1;
+    max-width: 100%;
+  }
+
+  @media(max-width: 66rem) {
+    flex-direction: column;
+
+    > .sidebar {
+      flex-basis: auto;
+    }
+  }
+}

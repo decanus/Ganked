@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+printf " _                      _       ______             
+| |                    | |     (____  \            
+| |      ___ _   _ ____| |_   _ ____)  ) ___ _   _ 
+| |     / _ \ | | / _  ) | | | |  __  ( / _ ( \ / )
+| |____| |_| \ V ( (/ /| | |_| | |__)  ) |_| ) X ( 
+|_______)___/ \_/ \____)_|\__  |______/ \___(_/ \_)
+                         (____/                    "
+
+yum install -y ruby
+
+# YUM Repos
+yes | cp -rf /opt/lovelybox/conf/yum/*.repo /etc/yum.repos.d/
+
+# EPEL repo
+wget -r --no-parent -A 'epel-release-*.rpm' http://dl.fedoraproject.org/pub/epel/7/x86_64/e/
+rpm -Uvh dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-*.rpm
+
+# Remi repo
+wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+sudo rpm -Uvh remi-release-7*.rpm

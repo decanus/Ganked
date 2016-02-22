@@ -1,0 +1,42 @@
+modal-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color-dark-blue, .5);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transition: all .3s;
+  z-index: 20;
+
+  > .inner {
+    @extend %flow-box;
+
+    background-color: $color-dark-blue;
+    padding: ($gap-size * 2);
+    width: 100%;
+    max-width: 30rem;
+    margin: auto;
+    overflow: auto;
+    transition: all .3s;
+    transform: scale(1);
+  }
+
+  &[hidden] {
+    display: flex !important;
+
+    > .inner {
+      transform: scale(.8);
+      opacity: 0;
+    }
+
+    background-color: transparent;
+    pointer-events: none;
+  }
+}
+
+[data-modal-dialog] {
+  cursor: pointer;
+}

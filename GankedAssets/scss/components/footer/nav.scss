@@ -1,0 +1,26 @@
+.footer-nav {
+  text-transform: uppercase;
+
+  > ul > li {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  &.-social {
+    margin: 108px 0 18px 0;
+    text-align: center;
+
+    > .icons {
+      display: flex;
+      justify-content: center;
+    }
+
+    > .icons > a {
+      margin: 0 .5em;
+    }
+  }
+
+  @media #{$media-query-phone} {
+    text-align: center;
+  }
+}

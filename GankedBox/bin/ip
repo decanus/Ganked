@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+# (c) 2015 Ganked
+
+require 'yaml'
+
+config = YAML.load(File.read(File.join(__dir__, '../lovelybox.yml')))
+puts config['network']['private_ip']

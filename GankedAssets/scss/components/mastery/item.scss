@@ -1,0 +1,36 @@
+.mastery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &.-disabled > *:not(info-box),
+  &.-disabled::before {
+    opacity: .1;
+  }
+
+  > .image {
+    width: 3rem;
+    border: 2px solid $color-yellow;
+  }
+
+  > .text {
+    background-color: $primary-color;
+    padding: .6em 1em;
+    font-size: .7em;
+    border-radius: 1em;
+    display: inline-block;
+    transform: translateY(-50%);
+  }
+
+  > info-box {
+    z-index: 2;
+  }
+
+  &.-prereq::before {
+    content: '';
+    height: .833em;
+    margin-top: -0.833em;
+    background-color: $color-yellow;
+    width: .6em;
+  }
+}

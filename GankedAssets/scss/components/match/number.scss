@@ -1,0 +1,10 @@
+.match-number {
+  display: flex;
+  margin: -0.3rem;
+
+  > .image,
+  > .text {
+    align-self: center;
+    margin: .3rem;
+  }
+}

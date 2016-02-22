@@ -1,0 +1,29 @@
+button[is="action-button"],
+button[is="compare-button"]{
+  @extend %button;
+
+  > .spinner {
+    display: none;
+    width: 1.166rem;
+    height: 1.166rem;
+    border: .16667rem solid currentColor;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 100%;
+    transition: border .125s;
+  }
+
+  &.-loading {
+    justify-content: center;
+  }
+
+  &.-loading > .spinner {
+    display: block;
+    animation: ease-in-out rotate 1s infinite;
+  }
+
+  &.-loading > .text,
+  &.-loading > .icon {
+    display: none;
+  }
+}

@@ -1,0 +1,19 @@
+%avatar-image {
+  display: inline-block;
+
+  > .image {
+    border-radius: 50%;
+  }
+
+  &.-normal {
+    width: 3rem;
+  }
+
+  &.-larger {
+    width: 3.5rem;
+  }
+
+  &.-large {
+    width: 5rem;
+  }
+}

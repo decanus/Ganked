@@ -1,0 +1,147 @@
+@font-face {
+	font-family: 'ganked-weapons';
+	src:url('fonts/ganked-weapons.eot?pjdb0z');
+	src:url('fonts/ganked-weapons.eot?pjdb0z#iefix') format('embedded-opentype'),
+		url('fonts/ganked-weapons.ttf?pjdb0z') format('truetype'),
+		url('fonts/ganked-weapons.woff?pjdb0z') format('woff'),
+		url('fonts/ganked-weapons.svg?pjdb0z#ganked-weapons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="weapon-"], [class*=" weapon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'ganked-weapons' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.weapon-decoy:before {
+	content: "\e927";
+}
+.weapon-ak47:before {
+	content: "\e900";
+}
+.weapon-aug:before {
+	content: "\e901";
+}
+.weapon-awp:before {
+	content: "\e902";
+}
+.weapon-bizon:before {
+	content: "\e903";
+}
+.weapon-cz75:before {
+	content: "\e904";
+}
+.weapon-deagle:before {
+	content: "\e905";
+}
+.weapon-elite:before {
+	content: "\e906";
+}
+.weapon-famas:before {
+	content: "\e907";
+}
+.weapon-fiveseven:before {
+	content: "\e908";
+}
+.weapon-g3sg1:before {
+	content: "\e909";
+}
+.weapon-galilar:before {
+	content: "\e90a";
+}
+.weapon-glock:before {
+	content: "\e90b";
+}
+.weapon-hegrenade:before {
+	content: "\e90c";
+}
+.weapon-hkp2000:before {
+	content: "\e90d";
+}
+.weapon-incgrenade:before {
+	content: "\e90e";
+}
+.weapon-knife_ct:before {
+	content: "\e90f";
+}
+.weapon-knife:before {
+	content: "\e910";
+}
+.weapon-m4a1:before {
+	content: "\e911";
+}
+.weapon-m4a4:before {
+	content: "\e912";
+}
+.weapon-m249:before {
+	content: "\e913";
+}
+.weapon-mac10:before {
+	content: "\e914";
+}
+.weapon-mag7:before {
+	content: "\e915";
+}
+.weapon-molotov:before {
+	content: "\e916";
+}
+.weapon-mp7:before {
+	content: "\e917";
+}
+.weapon-mp9:before {
+	content: "\e918";
+}
+.weapon-negev:before {
+	content: "\e919";
+}
+.weapon-nova:before {
+	content: "\e91a";
+}
+.weapon-p90:before {
+	content: "\e91b";
+}
+.weapon-p250:before {
+	content: "\e91c";
+}
+.weapon-sawedoff:before {
+	content: "\e91d";
+}
+.weapon-scar20:before {
+	content: "\e91e";
+}
+.weapon-sg556:before {
+	content: "\e91f";
+}
+.weapon-smokegrenade:before {
+	content: "\e920";
+}
+.weapon-ssg08:before {
+	content: "\e921";
+}
+.weapon-taser:before {
+	content: "\e922";
+}
+.weapon-tec9:before {
+	content: "\e923";
+}
+.weapon-ump45:before {
+	content: "\e924";
+}
+.weapon-usp:before {
+	content: "\e925";
+}
+.weapon-xm1014:before {
+	content: "\e926";
+}
+

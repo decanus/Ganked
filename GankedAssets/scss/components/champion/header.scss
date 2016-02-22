@@ -1,0 +1,34 @@
+.champion-header {
+  width: 100%;
+  margin-bottom: $gap-size;
+
+  > .title {
+    margin-left: ($champion-avatar-size + $gap-size * 2);
+  }
+
+  > .image {
+    @extend %parallax-image;
+    position: relative;
+  }
+
+  > .image > .avatar {
+    border-radius: 100%;
+    position: absolute;
+    bottom: -($champion-avatar-size / 2);
+    left: $gap-size;
+    width: $champion-avatar-size;
+    height: $champion-avatar-size;
+  }
+
+  @media #{$media-query-phone} {
+    > .title {
+      margin-left: 0;
+      margin-top: ($champion-avatar-size / 2 + $gap-size);
+    }
+
+    > .image > .avatar {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

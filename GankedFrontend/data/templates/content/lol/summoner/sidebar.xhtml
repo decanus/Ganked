@@ -1,0 +1,81 @@
+<aside class="sidebar">
+    <header class="summoner">
+        <div class="generic-box -normal-padding">
+            <div class="grid-wrapper -gap -no-wrap">
+                <div class="item -center">
+                    <div class="avatar-box -summoner">
+                        <img src="" alt="" id="avatar" class="image"/>
+                    </div>
+                </div>
+
+                <div class="item -center -clip-text">
+                    <h4 id="name" class="_noMargin _no-caps" />
+
+                    <div class="grid-wrapper -gap">
+                        <div class="item">
+                            <span id="region" class="_blue" />
+                        </div>
+                        <div class="item">
+                            Level <span id="level" class="_blue" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-wrapper -gap -no-wrap" id="ranked">
+                <div class="item -center">
+                    <img src="//cdn.ganked.net/images/lol/tier/bronze_i.png" class="image" id="ranked-image"/>
+                </div>
+                <div class="item -center -clip-text">
+                    <span class="_noMargin _no-caps" id="division" />
+
+                    <div class="grid-wrapper -gap">
+                        <div class="item">
+                            <small class="_dim" id="leaguePoints" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-wrapper -gap _center -full">
+                <div class="item -center -grow">
+                    <small class="_dim">Updates in <span id="updated"/> minutes</small>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav">
+        <nav class="vertical-nav">
+            <a id="matches" class="link" href="">Recent Matches</a>
+            <a id="runes" class="link" href="">Runes</a>
+            <a id="masteries" class="link" href="">Masteries</a>
+            <a id="champions" class="link" href="">Champions</a>
+        </nav>
+    </div>
+    <form action="//post.ganked.net/action/summoner/favourite" is="ajax-form" class="link" method="post" id="favourite-form">
+        <input type="hidden" name="summonerId"/>
+        <input type="hidden" name="region"/>
+        <input type="hidden" name="token"/>
+        <button id="favourite"
+                class="-red -block"
+                is="action-button"
+                action="//post.ganked.net/action/summoner/favourite"
+                active-action="//post.ganked.net/action/summoner/unfavourite"
+                text="Favourite"
+                active-text="Unfavourite">
+            <span class="icon octicon octicon-heart" />
+            <span class="text" id="favourite-text">Favourite</span>
+            <span class="spinner" />
+        </button>
+    </form>
+
+    <button class="-block" is="compare-button" active-text="Remove" text="Compare" id="compare-button">
+        <span class="icon"><span class="octicon octicon-law" /></span>
+        <span class="text">Add to Compare</span>
+    </button>
+
+    <modal-dialog id="login" data-render-keepid="" hidden="">
+        <div class="inner" id="login-inner" />
+    </modal-dialog>
+</aside>

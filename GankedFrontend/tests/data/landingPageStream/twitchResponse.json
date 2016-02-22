@@ -1,0 +1,32 @@
+{
+  "streams": [
+    {
+      "preview": {
+        "medium": "http://static-cdn.jtvnw.net/previews-ttv/live_user_crayyer-320x180.jpg"
+      },
+      "channel": {
+        "display_name": "Crayyer",
+        "name": "crayyer"
+      }
+    },
+    {},
+    {
+      "preview": {
+        "medium": "http://static-cdn.jtvnw.net/previews-ttv/live_user_sanek36-320x180.jpg"
+      },
+      "channel": {
+        "display_name": "Sanek36",
+        "name": "sanek36"
+      }
+    },
+    {
+      "preview": {
+        "medium": "http://static-cdn.jtvnw.net/previews-ttv/live_user_sinnerle-320x180.jpg"
+      },
+      "channel": {
+        "display_name": "Sinnerle",
+        "name": "sinnerle"
+      }
+    }
+  ]
+}

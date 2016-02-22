@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "title": "World of Warcraft",
+    "description": "Ganked.net is the best site for statistics across a range of multiple games."
+  },
+  "content": {
+    "replace": {
+      "main": "content.xhtml",
+      "landing-header": "../../../partials/landing-header.xhtml"
+    }
+  },
+  "text": {
+    "gameName": "World of Warcraft"
+  },
+  "classes": {
+    "landing-header": "landing-header -wow"
+  },
+  "attributes": {
+    "twitch-player": {
+      "data-game": "World of Warcraft"
+    }
+  },
+  "fetch": {
+    "twitch-player": {
+      "href": "/fetch/getStream"
+    }
+  }
+}

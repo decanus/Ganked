@@ -1,0 +1,6 @@
+*.rpmnew
+/.vagrant/
+/lovelybox.yml
+/default:
+/.DS_STORE
+/.lovelybox/lovelybox_*

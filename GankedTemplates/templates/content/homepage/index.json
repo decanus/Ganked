@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "title": "Welcome",
+    "description": "Ganked.net is the best site for statistics across a range of multiple games.",
+    "image":"http://cdn.ganked.net/favicon/android-chrome-192x192.png"
+  },
+  "content": {
+    "append": {
+      "main": "content.xhtml"
+    }
+  },
+  "classes": {
+    "main": ""
+  }
+}

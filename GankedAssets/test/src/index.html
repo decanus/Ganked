@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mocha Tests</title>
+    <link href="../bower_components/mocha/mocha.css" rel="stylesheet"/>
+    <script src="../bower_components/mocha/mocha.js"></script>
+    <script src="../bower_components/Array.from/array-from.js"></script>
+</head>
+<body>
+<div id="mocha"></div>
+
+<script>
+    mocha.setup('bdd');
+    mocha.checkLeaks();
+</script>
+
+--sources--
+
+<script>
+    window.addEventListener('load', function () {
+        mocha.run();
+    });
+</script>
+
+</body>
+</html>

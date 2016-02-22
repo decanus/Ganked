@@ -1,0 +1,33 @@
+input[is='timeline-scrubber'] {
+  appearance: none;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .2);
+  height: 10px;
+  padding: 0;
+
+  @mixin timeline-scrubber-thumb() {
+    appearance: none;
+    background-color: $primary-color;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  &::-webkit-slider-thumb {
+    @include timeline-scrubber-thumb();
+  }
+
+  &::-moz-range-thumb {
+    @include timeline-scrubber-thumb();
+  }
+
+  &::-ms-thumb {
+    @include timeline-scrubber-thumb();
+  }
+
+  &::-moz-range-track {
+    background: none;
+  }
+}

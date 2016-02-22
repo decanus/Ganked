@@ -1,0 +1,11 @@
+Header add Access-Control-Allow-Origin "http://dev.ganked.net"
+Header add Access-Control-Allow-Credentials true
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]

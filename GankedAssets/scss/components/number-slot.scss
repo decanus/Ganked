@@ -1,0 +1,12 @@
+.number-slot {
+  background-color: $tertiary-color;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: .7rem;
+  text-align: center;
+
+  &.-filled {
+    background-color: $primary-color;
+    color: #fff;
+  }
+}

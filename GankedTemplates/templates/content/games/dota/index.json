@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "title": "Dota 2",
+    "description": "Ganked.net is the best site for statistics across a range of multiple games.",
+    "image":"http://cdn.ganked.net/favicon/android-chrome-192x192.png"
+  },
+  "content": {
+    "replace": {
+      "main": "content.xhtml",
+      "landing-header": "../../../partials/landing-header.xhtml"
+    }
+  },
+  "text":{
+    "gameName":"Dota 2"
+  },
+  "classes": {
+    "landing-header": "landing-header -dota"
+  },
+  "attributes": {
+    "twitch-player": {
+      "data-game": "Dota 2"
+    }
+  },
+  "fetch": {
+    "twitch-player": {
+      "href": "/fetch/getStream"
+    }
+  }
+}
+

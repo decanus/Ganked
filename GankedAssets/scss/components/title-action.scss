@@ -1,0 +1,21 @@
+/**
+ * (c) 2015 Ganked <feedback@ganked.net>
+ */
+
+.title-action {
+  @extend %flow-element;
+
+  margin: 1rem (-$box-gap-larger);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  > .title {
+    margin: 0;
+  }
+
+  > .action,
+  > .title {
+    padding: 0 $box-gap-larger;
+  }
+}

@@ -1,0 +1,23 @@
+/**
+ * Generic List: `ul.generic-list` Used instead of a plain <ul> if a vertical list is required
+ *
+ *   @example
+ *   <ul class="generic-list">
+ *     <li>Apples</li>
+ *     <li>Bananas</li>
+ *     <li>Oranges</li>
+ *   </ul>
+ */
+.generic-list {
+  display: flex;
+  flex-direction: column;
+
+  > li:not(:first-child),
+  &.-continuation > li:first-child {
+    margin-top: $gap-size;
+  }
+
+  &.-inline {
+    display: inline-flex;
+  }
+}

@@ -1,0 +1,7 @@
+.page-wrap {
+  @include wrapper(72rem, 0);
+
+  &.-padding {
+    @include wrapper(72rem, $gap-size, $gap-size);
+  }
+}

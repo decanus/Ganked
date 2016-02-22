@@ -1,0 +1,23 @@
+input {
+  @extend %input;
+  width: 16rem;
+  height: 3.5em;
+
+  &.-big {
+    width: 26.833em;
+  }
+
+  &[disabled] {
+    opacity: .8;
+  }
+}
+
+::input-placeholder {
+  color: lighten($secondary-color, 30%);
+  text-overflow: ellipsis;
+}
+
+// Chrome's placeholder shadow-root has these styles inline, so we need !important.
+input::-webkit-input-placeholder {
+  text-overflow: ellipsis !important;
+}

@@ -1,0 +1,8 @@
+.player-box {
+  @extend %player-box;
+
+  > .image.-larger > .image {
+    width: 70px;
+    height: 70px;
+  }
+}

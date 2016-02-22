@@ -1,0 +1,14 @@
+.definition-block {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
+  > .definition {
+    font-size: .8rem;
+    margin-bottom: .2rem;
+  }
+
+  > .value {
+    color: $color-blue;
+  }
+}

@@ -1,0 +1,42 @@
+%button {
+  @extend %form-element;
+
+  text-transform: uppercase;
+  border: 3px solid currentColor;
+  font-weight: 400;
+  transition: color .3s, background-color .3s;
+  align-items: center;
+  justify-content: flex-start;
+
+  @include button-variant($primary-color);
+
+  &:not([hidden]) {
+    display: inline-flex;
+  }
+
+  &[disabled] {
+    pointer-events: none;
+  }
+
+  &.-block:not([hidden]) {
+    display: flex;
+    width: 100%;
+  }
+
+  &.-center {
+    justify-content: center;
+  }
+
+  &.-smaller {
+    padding: 0 1em;
+  }
+
+  &.-red {
+    @include button-variant($color-red);
+  }
+  
+  > .icon {
+    margin-right: .6em;
+    font-size: 1.2em;
+  }
+}

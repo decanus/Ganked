@@ -1,0 +1,12 @@
+@mixin champion-table-field($name, $flex-basis) {
+  & > .#{$name} {
+    padding: 7px;
+    flex-basis: $flex-basis;
+    text-align: right;
+
+    @media (max-width: 600px) {
+      flex-basis: auto;
+      font-size: 14px;
+    }
+  }
+}

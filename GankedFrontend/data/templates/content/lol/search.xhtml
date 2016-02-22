@@ -1,0 +1,64 @@
+<div class="search">
+    <div class="grid grid-wrapper -full -gap -center">
+        <div class="item -center -max">
+            <form class="search-form" id="summonerSearchForm" data-render-keepid="" action="/games/lol/search" method="get" autocomplete="off">
+                <div class="input">
+                    <div class="input-group" data-render-keepid="">
+                        <div class="input">
+                            <div class="input-wrap">
+                                <label class="inner">
+                                    <input type="text" placeholder="Summoners..." class="input -smaller -no-margin" name="name" id="summonerSearch" data-render-keepid="" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="input -addon">
+                            <div class="input-wrap">
+                                <label class="inner">
+                                    <select name="region" class="input -auto -smaller -no-margin">
+                                        <option value="all" id="all">All</option>
+                                        <option value="br">BR</option>
+                                        <option value="eune">EUNE</option>
+                                        <option value="euw">EUW</option>
+                                        <option value="lan">LAN</option>
+                                        <option value="las">LAS</option>
+                                        <option value="na">NA</option>
+                                        <option value="oce">OCE</option>
+                                        <option value="ru">RU</option>
+                                        <option value="tr">TR</option>
+                                        <option value="kr">KR</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+
+                        <search-suggestions for="#summonerSearch" attach="#summonerSearchForm"/>
+                    </div>
+                </div>
+
+                <button type="submit" class="button -smaller -no-margin">
+                    <span class="octicon octicon-search" />
+                </button>
+            </form>
+        </div>
+
+        <div class="item -center -max">
+            <summoner-comparison class="search-form" hidden="">
+                <div class="input">
+                    <a data-info-box="info-box" class="link-button -flex -smaller -active -no-margin">
+                        <span>Comparison</span>
+                    </a>
+                </div>
+
+                <button is="compare-clear-button" class="button -red -no-margin -smaller" hidden="">
+                    <span class="octicon octicon-x"></span>
+                </button>
+
+                <info-box class="dropdown" hidden="">
+                    <div class="content"></div>
+                </info-box>
+            </summoner-comparison>
+        </div>
+
+    </div>
+</div>

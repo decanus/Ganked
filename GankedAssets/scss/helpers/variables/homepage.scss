@@ -1,0 +1,8 @@
+// Gradients
+$homepage-vertical-gradient: linear-gradient(transparent, #fff, $primary-color);
+$homepage-horizontal-gradient: linear-gradient(to right, $primary-color, #fff);
+
+// Widths
+$homepage-line-width: (1px / $font-size) * 1rem;
+$homepage-image-width: 19.166rem;
+$homepage-wrap-width: 59.5rem;

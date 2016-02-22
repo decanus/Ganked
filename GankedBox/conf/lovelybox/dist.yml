@@ -1,0 +1,154 @@
+---
+
+# Specifies the version (for auto - updates)
+version: "0.20"
+
+boot:
+  services:
+  - php-fpm
+  - nginx
+  - redis
+  - mongod
+  - ca-certificates
+
+  commands:
+  # add trusted certificates
+  - command: update-ca-trust enable
+  - command: cp $(find /etc/nginx/certs -name "cert.pem") /etc/pki/ca-trust/source/anchors/
+  - command: update-ca-trust extract
+
+  - command: php controller.php Initial
+    dir: /var/www/GankedBackend
+
+  - command: npm install --no-bin-links
+    dir: /var/www/GankedAssets
+
+  - command: npm install
+    dir: /var/www/GankedSocket
+
+  - command: yes | bower install --allow-root
+    dir: /var/www/GankedAssets
+
+  - command: export NODE_TLS_REJECT_UNAUTHORIZED=0 && runuser -l vagrant -c "forever start /var/www/GankedSocket/server.js"
+    dir: /var/www/GankedSocket
+
+  - command: make -B -C /var/www/GankedAssets
+
+provision:
+  packages:
+  - nginx
+  - php
+  - php-dom
+  - php-devel
+  - php-fpm
+  - php-pear
+  - php-redis
+  - php-mbstring
+  - wget
+  - mongodb-org
+  - openssl
+  - openssl-devel
+  - redis
+  - gcc
+  - gcc-c++
+  - autoconf
+  - automake
+  - ruby-devel
+  - rubygems
+  - java-1.7.0-openjdk
+  - git
+  - vim
+  - ImageMagick
+  - optipng
+  - jpegoptim
+  - php-imagick
+  - php-tidy
+
+  rubygems:
+  - sass
+
+  pecl:
+  - Xdebug
+  - mongo
+
+  download:
+  - source: https://phar.phpunit.de/phpunit.phar
+    filemode: 0777
+    target: /usr/bin/phpunit
+  - source: https://github.com/theseer/Autoload/releases/download/1.20.0/phpab-1.20.0.phar
+    filemode: 0777
+    target: /usr/bin/phpab
+  - source: https://getcomposer.org/installer
+    filemode: 0777
+    target: composer_installer
+  - source: https://nodejs.org/dist/v4.2.1/node-v4.2.1-linux-x64.tar.gz
+    target: nodejs.tar.gz
+  - source: https://github.com/theseer/Autoload/releases/download/1.20.0/phpab-1.20.0.phar
+    target: /usr/bin/phpab
+    filemode: 0777
+
+  files:
+  - action: delete
+    target: /etc/hosts
+  - action: delete
+    target: /etc/php.ini
+  - action: create
+    target: /etc/php.d/50-mongo.ini
+    content: extension=mongo.so
+  - action: link
+    source: /opt/lovelybox/conf/php/php.ini
+    target: /etc/php.ini
+  - action: link
+    source: /opt/lovelybox/conf/hosts
+    target: /etc/hosts
+  - action: link
+    source: /opt/lovelybox/conf/php/php-fpm.conf
+    target: /etc/php-fpm.conf
+  - action: link
+    source: /opt/lovelybox/conf/shell/*.sh
+    target: /etc/profile.d/
+
+  - action: unpack
+    source: nodejs.tar.gz
+
+  - action: copy
+    source: node-v4.2.1-linux-x64/bin
+    target: /usr/
+  - action: copy
+    source: node-v4.2.1-linux-x64/lib
+    target: /usr/
+  - action: copy
+    source: node-v4.2.1-linux-x64/share
+    target: /usr/
+
+  - action: create
+    target: /bin/gnkd-persist-all
+    mode: 0775
+    content: |
+      #!/usr/bin/bash
+      # (c) 2015 Ganked
+
+      for key in $(redis-cli KEYS "*")
+      do
+        redis-cli PERSIST $key
+      done
+
+  - action: create
+    target: /bin/gnkd-clear-cache
+    mode: 0775
+    content: |
+      #!/usr/bin/bash
+      # (c) 2015 Ganked
+
+      for key in $(redis-cli KEYS "cache_*")
+      do
+        redis-cli DEL $key
+      done
+
+  commands:
+  - command: php composer_installer -- --install-dir=/usr/bin --filename=composer
+  - command: service mongod start
+  - command: mongo /opt/lovelybox/conf/mongo/provision.js
+  - command: npm install -g bower postcss forever
+  - command: usermod -a -G nginx vagrant
+  - command: printf "LANG=en_US.UTF-8\nLC_ALL=en_US.UTF-8\n"NODE_TLS_REJECT_UNAUTHORIZED=0" > /etc/environment

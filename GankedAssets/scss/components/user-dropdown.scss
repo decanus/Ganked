@@ -1,0 +1,62 @@
+.user-dropdown {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: $gap-size;
+  color: $secondary-color;
+
+  > .avatar {
+    width: 40px;
+    cursor: pointer;
+  }
+
+  > .dropdown {
+    position: absolute;
+    right: 0;
+    top: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: transform .3s, opacity .3s;
+    opacity: 1;
+    z-index: 1000;
+
+    &:before {
+      content: '';
+      width: 0;
+      border: 12px solid transparent;
+      border-bottom-color: #fff;
+      margin-right: .5em;
+    }
+  }
+
+  > .dropdown[hidden] {
+    display: flex !important;
+    transform: translateY(-1em);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  > .dropdown > .content {
+    padding: ($gap-size * 2);
+    background-color: #fff;
+    min-width: 14rem;
+    box-shadow: 0 .2em .1em rgba(0, 0, 0, .3);
+  }
+
+  > .dropdown > .content > .nav {
+    margin-top: 1em;
+  }
+
+  > .dropdown > .content > .nav > ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  > .dropdown > .content > .nav a,
+  > .dropdown > .content > .nav button {
+    color: $secondary-color;
+    display: block;
+    padding: .3em 0;
+  }
+}

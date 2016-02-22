@@ -1,0 +1,211 @@
+#cloud-config
+# vim: syntax=yaml
+
+package_upgrade: true
+yum_repos:
+  epel:
+    name: Extra Packages for Enterprise Linux 7 - $basearch
+    baseurl: http://download.fedoraproject.org/pub/epel/7/$basearch
+    mirrorlist: https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch
+    enabled: true
+    gpgcheck: true
+    failovermethod: priority
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+
+  webtastic:
+    name: Webtatic Repository EL7 - $basearch
+    baseurl: https://repo.webtatic.com/yum/el7/$basearch
+    mirrorlist: https://mirror.webtatic.com/yum/el7/$basearch/mirrorlist
+    enabled: true
+    gpgcheck: true
+    failovermethod: priority
+    gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-webtatic-el7
+
+users:
+  - name: decanus
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDizDO5oEsfYm7elEHQ87pMsFAeBCxY3G2hIMr5NfbnuEBfW3ganhfzN+Xl4zV8uLVNEM6j0SREB8rPydclyBG+FdBj9FsQ3EUhoAcPo0wbV4tMAwwDgpNioIJf1IwaXIxVqfRz6Cl8ILJ5hxum0yhuyU7PW/FxDDILnA8JfVzZDIyFaqPRquvFjaSHFfkeTzhHGmCcMyYGrf9KalmxQ8y0uTIqyZb1czXAebWYs/0OVjd1tLSiyRU9erRcaWvm6uAYO9wmPfTywFWUiJDiiG9gauMbJ5t+f41BUDx1R5S7OVEQlXXFAww+pklO2basL9Yiir4OfXRxrZ84wA5AVR3lN1RAfqR7b1VzEeo7vQp2F9gnPyxjh2z0xg1ThPexagQTFSwcssNbGS1mNpjDNr7QTj24EvMxv73MNCkHR1p1bJOfzERLypdrBXqw8W2M0LIlZ5nQK0P7T2PAoMy93UVHkynhAAsUpAlvOrxEVCG1nZFLs6TjK16M87M4E4f9vBT3CzQK+kcftMi0OrzxjhuOkkFxAqsU4xAWK4xNBshPCltB9e5TeD3d7pLc31fKKgEHkRThMVu2NIXXQJh6PEudv/xO+IUROSX7Imdr79WE2weYxKrSSH/imssWtVMGighdY841cf9N6Q4KyhMTiAwUG73cYtLuA2qjXSQAvvSo3Q== dean.eigenmann@icloud.com
+
+  - name: ruby
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+w/JyDFEqBJcru5XgGDSDq34pSSG3VTsecBj6CFOKtxJSIqXg2pGD7UgOY1OsGff046hthZOjDAzVeTAK1tnMnX3CWSgtmdk7Rrs+8dU6eY6mBkMTiz8kpCDWeSX5uceOqolCRxb6NK3bnbPaMQPbBkWS4gfG4Umt28dcB9SIiiHxbMh8mg6wYTHP8k41LCSxHqGgKraCGHNcDi+8RIiPqgZW/4iLhc/kFQzmVd/65I52g/053YnmjJsmv5Oc93B372dBkYbGG0TUtZOy+5m6X0XLO/m5q0K+OZ6AxvulkouRqGXG18jmz696bybdt9DQSW7gMQ1LfvGvCzH9jePVtwK5xvY92Cn99vsjZgqyW+V0n8OuM9Sbv0AcGB5pNjGKZdEoVxhx4ElR0UMpcCGdV7F/KlgqA4rlM0oTU+YxWX76tkqMYbzq+ApLNeCadAiiuM6UIoKJHoxJgWgyD1amGrBpW6btzJw1jM/gVWkdMsVvUgVd6i5Wd2f9nDgDBGsF0TwUQbQZAMKKaGWsBgRbkxrph3HLdqc4DHv51WejHPS/qd7vHUv1Z23wNY5LJ+FheaBHnNaQqhx86eWTG1bkfhnks4nbI3CAcq86NqGeccGyABQqKY0Nhz3G3As0XsE3KAtotgcqKQ4mbsV/fmDyaBTCtb9bgQipfp+BtM2F/w== ruben.schmidmeister@gmail.com
+
+packages:
+  - php56w
+  - php56w-fpm
+  - ruby
+  - ruby-devel
+  - nginx
+  - git
+  - vim
+  - ImageMagick
+  - optipng
+  - jpegoptim
+  - ant
+
+write_files:
+  - encoding: text/plain
+    path: /root/.ssh/github
+    owner: "root:root"
+    permissions: '0600'
+    content: |
+      -----BEGIN RSA PRIVATE KEY-----
+      MIIEogIBAAKCAQEA1kvNugm52xalt7XeL+lP9xbDIJcTQiSDdhNQwKmts3S+QnXf
+      ioGeIvnaR3QkL8n+EOoQEK0+C/xkVZjyB1iMlEdgu7M/TJcQ2HUADXCfpbgInWZU
+      p7bIe5lBPiUmZKoPSdaJPwYwsfIRhEfIfmDWDFxhWPbXpEIaWq1k6wm7Hxr5Fz9B
+      pEUno03FtXLZGudY7vbtmPU4MaQiZUclizEWLQJWrUuUwJccWsBZ5PhsALkR0Gde
+      2iUE9CKHcRzO+z34f1XLPoBtQHlUqLv3hYr4FOli+sv8epOpme0cKsDj3JipwaYK
+      cbU9OC+VbjiNgOeBKI4Z0ohX29xNRW3V0abPgQIBIwKCAQEAsY9EDyyhTyFkvMnj
+      +8/xzLsWtJpvCusN1tzN4Xal3dXCNxE1kAT/Xs8FUSW3lU+X/2LaHHJJWmNpE7k9
+      kQ7a4UJ0uMe4GuORnWhB30APQCrFTzeH+K1kSSc2DuuU1xCQUx95CFWWD8iSK8Zy
+      7F7dPXEddZlTlrptm5b72LBKlhwlrV7h5k1Og08ISd+37dQmq7ARyAJ3O4cJgIcI
+      UCxX/ft4Mu9dbAKuotBRzmH3j+I/CwaC/ZoB149hYOaJhmnx2yxyOj+2Z5GNfiRk
+      CWtVuN6PcEod0MAOMXCZ245JsWB9WX1nabxjc3S9E4Uj0tj9Hx6CuVp0++zgJxRF
+      kl99WwKBgQDq/ETNm7u3Q9Zgpz7TvOKEpisx2Yb67FcLhGlBrGlWLoGEtweyKtd3
+      U9KOjzjWYfZAc+yjjGorXlfLYXJpOAEAdS7Ft1qnjb2iZi3sbDHxFseBphAk+PbI
+      ZWxHrczoABeoZs0MG7lg4RICl2wyBNbpHGUP0WNo6F8fsS1XkIftpQKBgQDpdeA3
+      QgjT0qVAkbwVupIGt2Eqs46S4vmP0v0gdTEg1Mzonk8iYtbj6idW8rwbY93mYNP5
+      5rGH6ei5S0S29OBqNpkakEui7x2vN45C6qtY6gxyAi1s5sa+a5fULVnpiteWNXac
+      AoJtJAxEtml23rJvYjBalDNY75RCXEKCkHarrQKBgQChIgNLKPW/fvlm2RUjejTt
+      Pr6IlSlbmr9YWsvVQwZm+1F/k3L91Dv6DZeyNlLcJeqv2nZhhNsWbJP5LOC9LbeL
+      SQohLUV6NU7VwmiiHk4hqThY5uZ/wKk49RcMlG9AABA49gjyXCdYX9HV5CzvGULo
+      /YcgyhhH78wy/SZn7hQQqwKBgDwIXjoYS2mrMc7GY5CPD5tTueZor6IdG5oDDePG
+      XRcSJg/uMZsguuomRKFUXEGOtWcgNoIWv++/ziEEueXnMmR0cIMsaziGoTuvMzXH
+      UKHVyK+aKPAeFdkxnBH9CH3h36pIQxIsh/At10TecuQNYRVTw0p94VFiLXAmWj7U
+      sM0PAoGAZzl9TeIylx4cCGas6ewEwZO9LDUF1Zusi7ut1p9magroKvTSOGirAXl8
+      U4Y1o+j0HEorVAFTHlry0wCqNM7KVXClHH56LKB8L0N8vumb5XrZ0fPQ+8UjSKhO
+      QHqkicZaamA3HECQLAJO01TFiCtXQutItRCyWZQSbGJNTjQorvA=
+      -----END RSA PRIVATE KEY-----
+
+  - encoding: text/plain
+    path: /root/.ssh/config
+    content: |
+      Host github.com
+      User git
+      IdentityFile ~/.ssh/github
+
+  - encoding: text/plain
+    path: /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    content: |
+      -----BEGIN PGP PUBLIC KEY BLOCK-----
+      Version: GnuPG v1.4.11 (GNU/Linux)
+
+      mQINBFKuaIQBEAC1UphXwMqCAarPUH/ZsOFslabeTVO2pDk5YnO96f+rgZB7xArB
+      OSeQk7B90iqSJ85/c72OAn4OXYvT63gfCeXpJs5M7emXkPsNQWWSju99lW+AqSNm
+      jYWhmRlLRGl0OO7gIwj776dIXvcMNFlzSPj00N2xAqjMbjlnV2n2abAE5gq6VpqP
+      vFXVyfrVa/ualogDVmf6h2t4Rdpifq8qTHsHFU3xpCz+T6/dGWKGQ42ZQfTaLnDM
+      jToAsmY0AyevkIbX6iZVtzGvanYpPcWW4X0RDPcpqfFNZk643xI4lsZ+Y2Er9Yu5
+      S/8x0ly+tmmIokaE0wwbdUu740YTZjCesroYWiRg5zuQ2xfKxJoV5E+Eh+tYwGDJ
+      n6HfWhRgnudRRwvuJ45ztYVtKulKw8QQpd2STWrcQQDJaRWmnMooX/PATTjCBExB
+      9dkz38Druvk7IkHMtsIqlkAOQMdsX1d3Tov6BE2XDjIG0zFxLduJGbVwc/6rIc95
+      T055j36Ez0HrjxdpTGOOHxRqMK5m9flFbaxxtDnS7w77WqzW7HjFrD0VeTx2vnjj
+      GqchHEQpfDpFOzb8LTFhgYidyRNUflQY35WLOzLNV+pV3eQ3Jg11UFwelSNLqfQf
+      uFRGc+zcwkNjHh5yPvm9odR1BIfqJ6sKGPGbtPNXo7ERMRypWyRz0zi0twARAQAB
+      tChGZWRvcmEgRVBFTCAoNykgPGVwZWxAZmVkb3JhcHJvamVjdC5vcmc+iQI4BBMB
+      AgAiBQJSrmiEAhsPBgsJCAcDAgYVCAIJCgsEFgIDAQIeAQIXgAAKCRBqL66iNSxk
+      5cfGD/4spqpsTjtDM7qpytKLHKruZtvuWiqt5RfvT9ww9GUUFMZ4ZZGX4nUXg49q
+      ixDLayWR8ddG/s5kyOi3C0uX/6inzaYyRg+Bh70brqKUK14F1BrrPi29eaKfG+Gu
+      MFtXdBG2a7OtPmw3yuKmq9Epv6B0mP6E5KSdvSRSqJWtGcA6wRS/wDzXJENHp5re
+      9Ism3CYydpy0GLRA5wo4fPB5uLdUhLEUDvh2KK//fMjja3o0L+SNz8N0aDZyn5Ax
+      CU9RB3EHcTecFgoy5umRj99BZrebR1NO+4gBrivIfdvD4fJNfNBHXwhSH9ACGCNv
+      HnXVjHQF9iHWApKkRIeh8Fr2n5dtfJEF7SEX8GbX7FbsWo29kXMrVgNqHNyDnfAB
+      VoPubgQdtJZJkVZAkaHrMu8AytwT62Q4eNqmJI1aWbZQNI5jWYqc6RKuCK6/F99q
+      thFT9gJO17+yRuL6Uv2/vgzVR1RGdwVLKwlUjGPAjYflpCQwWMAASxiv9uPyYPHc
+      ErSrbRG0wjIfAR3vus1OSOx3xZHZpXFfmQTsDP7zVROLzV98R3JwFAxJ4/xqeON4
+      vCPFU6OsT3lWQ8w7il5ohY95wmujfr6lk89kEzJdOTzcn7DBbUru33CQMGKZ3Evt
+      RjsC7FDbL017qxS+ZVA/HGkyfiu4cpgV8VUnbql5eAZ+1Ll6Dw==
+      =hdPa
+      -----END PGP PUBLIC KEY BLOCK-----
+
+  - encoding: text/plain
+    path: /etc/pki/rpm-gpg/RPM-GPG-KEY-webtatic-el7
+    content: |
+      -----BEGIN PGP PUBLIC KEY BLOCK-----
+      Version: GnuPG v2
+
+      mQINBFOch44BEADUQkO69WbI65GuTf7e/PxkPMONyyjeV3wZjz1qHtDbryzQmoN9
+      CJg4xLUd/Dd03peNRQJ7RL/l2qsCu1Mb7zSTqaDdExRGyweKw6mIGBumzvBBRXPw
+      97ezIEIiEmq3ZUKFGBSDU3VQI4Zzndn/NgSOa03tWn2VlrTyYsMHm07839OGn6bD
+      CdnxlzAv2Z6FxYKomo2jMNPQ9vyJ6h3dSUghFhAkZPlkfLPAdBxuFVnn3oyAElDa
+      F8G19BfRywg7tLQRE7aSuX9E7VqJo0QmZPqwy/oijb9NSEyDg9lO+y/naebX67NJ
+      L51+RdAXWBxAk3FtSANTz9v3LgszCTDpeSLgAz2zvwsAyuI/GbF0qPhv0QPsnQ+9
+      ipbZoRTVo6zqBSITdK4kKs9WQXwYq40KzFFcL0d/fruYwCIAkOpBKJPCRYcX2rWj
+      usbuXBei9bB6aGFo5txLHoACpBh9eR4RDkEtcFrfnCJBWGs/JleyxFoL+jn4F+Nc
+      V73zWuSaYBmc7AMsE/3nu4iEOvYMDJB6KG7Vqz++ZIM2jjuyT4ujATpJlzr2SyIh
+      LlKhOLEv8sHZfqjzuN8eStycbSTm6EWQLR5R2oZODgI29hMk2C04JQ26+WjtJnr4
+      U43bPgh39qTkXwjU+5kCb0D5YixIcvMFsTm4i2bEBBvD+0i0BU2eHbRMMwARAQAB
+      tCBXZWJ0YXRpYyBFTDcgPHJwbXNAd2VidGF0aWMuY29tPokCOQQTAQIAIwUCU5yH
+      jgIbAwcLCQgHAwIBBhUIAgkKCwQWAgMBAh4BAheAAAoJEOh/0jZi50yl0HQQAJzN
+      8/eq1aN38Uk/x0STbbcdmn4vKkYYP3asrz7LWWU6IPacEc4LDkpc/YumzllE3suw
+      /wISvg7G4hZohQIdnCOoqkZo7OTUbHKkDJZykhqOI8Fs+6Tc2UQnLA3+uTHthKeF
+      JBjiRD6LxwSdoPulHDFBEPNOr1gqo3bHS40PxjxX3kFYnv8CR59MXcOLiy3aaVhA
+      Szj+BHhtDQ95xCxW2Z0jpHJ3F5fM9RAl5kR1hjtvvXjq8DbLn8HjHfJyvitSKMoI
+      jBAl32er5nrattBAKgnvGNA+CRR7b5VuOvHbl/xih4GpSKxCjkRFjwbnV0JYOXcf
+      Q9C2Y2750qlRU1hTcPr7Suc/dK7lgzuCEtLIzwMp+22OvF0LLV5FCAGIr3MErC5S
+      ZZBwH7V44AUpvWJgO6+ral3Yn3BHjPazZu52Nj1A9PX3D+7M2iVWGmyADAS5pFbt
+      8RnOzEzTRqKVL37K1C8gaxkx1j8pNDdjTSk0JZeCcyi3dsPTe+wsdbfude1jzD8r
+      XUUW6y4OjQfWknGJpvQ7bfYkoYvINCWqdwUgaOGmrQ8omkeO4AjHsJ41/elz5FN6
+      yG86FITDM4P64H8PBSCkFUYaYXrnWHWftjGcrGF6cFjZGLDh/pWL0vBgB7u+LoMa
+      EFPgVyg6CysBrTAT061QVX9O1bJTtxXAcG2vr/kv
+      =D3Nr
+      -----END PGP PUBLIC KEY BLOCK-----
+
+
+runcmd:
+  - printf "LANG=en_US.UTF-8\nLC_ALL=en_US.UTF-8\nLC_ALL=en_US.UTF-8" > /etc/environment
+
+  # Update SSH config
+  - sed -i -e '/^PermitRootLogin/s/^.*$/PermitRootLogin no/' /etc/ssh/sshd_config
+  - sed -i -e '$aAllowUsers decanus ruby' /etc/ssh/sshd_config
+  - service sshd restart
+
+  # apache ssh keys
+  - mkdir -p /var/www/.ssh
+  - cp /root/.ssh/config /var/www/.ssh/config
+  - cp /root/.ssh/github /var/www/.ssh/github
+  - chown apache:apache /var/www/.ssh/github
+
+  # Node.js
+  - wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-x64.tar.gz
+  - tar -xvf node-v4.2.2-linux-x64.tar.gz
+  - cp -R node-v4.2.2-linux-x64/bin /usr
+  - cp -R node-v4.2.2-linux-x64/share /usr
+  - cp -R node-v4.2.2-linux-x64/lib /usr
+  - cp -R node-v4.2.2-linux-x64/include /usr
+
+  # Misc. Dependencies
+  - npm install -g bower
+  - gem install sass
+
+  # Clone git repos
+  - ssh-keyscan github.com > /root/.ssh/known_hosts
+  - (cd /var/www && git clone -b master --single-branch git@github.com:Ganked/GankedAssets.git GankedAssets-new)
+  - (cd /var/www && git clone git@github.com:bash/GankedUtilities)
+  - (cd /var/www/GankedAssets-new && ant)
+
+  # Set access rights
+  - chmod 777 /var/www/GankedAssets-new /var/www/GankedAssets -R
+  - chown apache:apache /var/www/GankedAssets-new /var/www/GankedAssets -R
+
+  # Update nginx conf
+  - mv /etc/nginx /etc/nginx.default
+  - ln -s /var/www/GankedUtilities/servers/zyra/nginx /etc/nginx
+
+  # Update php-fpm conf
+  - mv /etc/php-fpm.d /etc/php-fpm.d.default
+  - ln -s /var/www/GankedUtilities/servers/zyra/php-fpm.d /etc/php-fpm.d
+
+  # Enable & Start Services
+  - systemctl enable nginx.service
+  - systemctl enable php-fpm.service
+  - service nginx start
+  - service php-fpm start
+
+  # Notify
+  - |
+    curl https://api.pushbullet.com/v2/pushes \
+         --header "Access-Token: ZCCMvO7uJjPVlCB2vS3EW2DS85Qkj2qq" \
+         --header "Content-Type: application/json" \
+         --data-binary '{"title": "Your Droplet is ready", "type":"note", "body": "cloud-config has completed setting up your droplet"}'

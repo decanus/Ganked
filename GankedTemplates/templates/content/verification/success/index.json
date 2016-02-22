@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "title": "Verification",
+    "description": "Ganked.net is the best site for statistics across a range of multiple games."
+  },
+  "content": {
+    "append": {
+      "main": "content.xhtml"
+    }
+  },
+  "classes": {}
+}

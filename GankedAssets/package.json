@@ -1,0 +1,42 @@
+{
+  "name": "GankedAssets",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://cdn.ganked.net",
+  "private": "true",
+  "main": "js/ganked.js",
+  "dependencies": {
+    "d3": "^3.5.6",
+    "es6-promise": "^2.3.0",
+    "es6-symbol": "^2.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "babelify": "^6.3.0",
+    "bower": "^1.6.5",
+    "browserify": "^11.2.0",
+    "concat-cli": "^1.0.1",
+    "exorcist": "^0.4.0",
+    "jshint": "^2.8.0",
+    "mocha-phantomjs": "^4.0.1",
+    "postcss": "^5.0.10",
+    "postcss-cli": "^2.3.2",
+    "svgo": "^0.5.6",
+    "uglify-js": "^2.5.0",
+    "watch": "^0.16.0"
+  },
+  "scripts": {
+    "test": "make clean && bower install && npm install && make test -B"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ganked/GankedAssets.git"
+  },
+  "author": "Ruben Schmidmeister <ruben.schmidmeister@gmail.com>",
+  "contributors": [
+    "Dean Eigenmann <dean.eigenmann@icluod.com>"
+  ],
+  "bugs": {
+    "url": "https://github.com/Ganked/GankedAssets/issues"
+  }
+}

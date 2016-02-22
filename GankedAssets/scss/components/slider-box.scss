@@ -1,0 +1,46 @@
+.slider-box {
+  overflow: hidden;
+  position: relative;
+
+  > .inner {
+    display: fleX;
+    transition: all .3s ease-in-out;
+    margin: 0 (-$gap-size);
+
+    > .item {
+      padding: $gap-size;
+      width: calc(100% / 3);
+      flex-shrink: 0;
+    }
+  }
+
+  > .controls > .control {
+    position: absolute;
+    background-color: #fff;
+    color: $primary-color;
+    padding: .8em .85em;
+    opacity: .7;
+    top: 50%;
+    cursor: pointer;
+
+    transform: translateY(-50%);
+    transition: opacity .3s;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.-disabled {
+      opacity: .2;
+      cursor: initial;
+    }
+
+    &.-left {
+      left: 0;
+    }
+
+    &.-right {
+      right: 0;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.generic-box {
+  @extend %generic-box, %flow-box;
+
+  width: 100%;
+  margin: .5em 0;
+
+  &.-fit {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  &.-no-background {
+    background-color: transparent;
+  }
+
+  &.-normal-padding {
+    padding: $gap-size;
+  }
+
+  &.-small {
+    max-width: 25em;
+  }
+
+  &.-center {
+    margin: $gap-size auto;
+
+    &.-noMargin {
+      margin: auto;
+    }
+  }
+
+  &.-noBorder {
+    border: none;
+  }
+
+  &.-noMargin,
+  &.-no-margin {
+    margin: 0;
+  }
+
+  &.-green {
+    border-color: $color-green;
+  }
+
+  &.-red {
+    border-color: $color-red;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+
+  > %flow-element:first-child {
+    margin-top: 0;
+  }
+
+  > %flow-element:last-child {
+    margin-bottom: 0;
+  }
+
+  @media #{$media-query-phone} {
+    padding: $gap-size;
+  }
+}

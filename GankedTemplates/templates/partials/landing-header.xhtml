@@ -1,0 +1,38 @@
+<header class="landing-header" data-fixed-header-container="" id="landing-header">
+    <div class="landing-wrap">
+        <h1 class="-banner -white _center" id="gameName"/>
+
+        <section id="stream">
+            <div class="twitch-player -loading" id="twitch-player">
+                <iframe class="video"></iframe>
+
+                <div class="playButton">
+                    <span class="octicon octicon-playback-play icon"/>
+                </div>
+
+                <div class="noStreams">
+                    <h3>We're sorry but there aren't any streams at the moment.</h3>
+                    <br/>
+                    <button class="reload">Try Again</button>
+                </div>
+            </div>
+
+            <div class="twitch-streams">
+                <ul class="twitch-stream-list"/>
+
+                <div class="grid-wrapper">
+                    <div class="item -grow">
+                        <span role="slider:prev" class="twitch-stream-button -left">
+                            <i class="octicon octicon-chevron-left"/>
+                        </span>
+                    </div>
+                    <div class="item -grow _right">
+                        <span role="slider:next" class="twitch-stream-button -right">
+                            <i class="octicon octicon-chevron-right"/>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</header>

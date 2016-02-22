@@ -1,0 +1,27 @@
+$cdn-path: '//cdn.ganked.net';
+$image-path: '#{$cdn-path}/images';
+
+$image-lol: url(#{$image-path}/games/lol.jpg);
+$image-wow: url(#{$image-path}/games/wow.jpg);
+$image-csgo: url(#{$image-path}/games/csgo.jpg);
+$image-dota: url(#{$image-path}/games/dota2.jpg);
+
+$image-lol-small: url(#{$image-path}/games/small/lol.jpg);
+$image-wow-small: url(#{$image-path}/games/small/wow.jpg);
+$image-csgo-small: url(#{$image-path}/games/small/csgo.jpg);
+$image-dota-small: url(#{$image-path}/games/small/dota2.jpg);
+
+$image-lol-bw: url(#{$image-path}/games/bw/lol.jpg);
+$image-wow-bw: url(#{$image-path}/games/bw/wow.jpg);
+$image-csgo-bw: url(#{$image-path}/games/bw/csgo.jpg);
+$image-dota-bw: url(#{$image-path}/games/bw/dota2.jpg);
+
+$image-crystal-scar: url(#{$image-path}/lol/maps/crystal-scar.jpg);
+$image-howling-abyss: url(#{$image-path}/lol/maps/howling-abyss.jpg);
+$image-summoners-rift: url(#{$image-path}/lol/maps/summoners-rift.jpg);
+$image-the-twisted-treeline: url(#{$image-path}/lol/maps/the-twisted-treeline.jpg);
+$image-butchers-bridge: url(#{$image-path}/lol/maps/butchers-bridge.jpg);
+
+$image-tree-defense: url(#{$image-path}/lol/tree/defense.jpg);
+$image-tree-offense: url(#{$image-path}/lol/tree/offense.jpg);
+$image-tree-utility: url(#{$image-path}/lol/tree/utility.jpg);

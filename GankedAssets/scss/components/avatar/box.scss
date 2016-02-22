@@ -1,0 +1,48 @@
+.avatar-box {
+  @extend %avatar-image;
+
+  > .image {
+    border: 3px solid #fff;
+    transition: border .3s;
+  }
+
+  &.-active > .image {
+    border-color: $color-green;
+  }
+
+  &.-purple > .image {
+    border-color: $color-purple;
+  }
+
+  &.-blue > .image {
+    border-color: $primary-color;
+  }
+
+  // @deprecated
+  &.-freeChampion {
+    width: 3.5em;
+  }
+
+  // @deprecated
+  &.-match {
+    width: 3em;
+  }
+
+  &.-match-overview {
+    width: 2.2em;
+  }
+
+  // @deprecated
+  &.-summoner {
+    width: 3rem;
+  }
+
+  // these are the new classes used instead of -summoner, -match and -free-champion
+  &.-normal {
+    width: 3rem;
+  }
+
+  &.-larger {
+    width: 3.5rem;
+  }
+}

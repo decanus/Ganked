@@ -1,0 +1,33 @@
+.image-box {
+  position: relative;
+  overflow: hidden;
+
+  %transitioning {
+    transition: all .3s ease-in-out;
+  }
+
+  > .image {
+    @extend %transitioning;
+    border-bottom: .277em solid transparent;
+  }
+
+  > .text {
+    @extend %transitioning;
+    position: absolute;
+    bottom: 0;
+    padding: 0 1em 1.277em 1em;
+    max-width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    transform: translateX(-100%) translateX(-1em);
+  }
+
+  &:hover > .text {
+    transform: translateX(0);
+  }
+
+  &:hover > .image {
+    border-color: #fff;
+  }
+}

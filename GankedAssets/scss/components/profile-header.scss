@@ -1,0 +1,16 @@
+.profile-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: -($gap-size / 2);
+
+  > .image,
+  > .name,
+  > .content {
+    padding: ($gap-size / 2);
+  }
+
+  > .content {
+    width: 100%;
+  }
+}

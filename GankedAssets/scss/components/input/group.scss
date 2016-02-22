@@ -1,0 +1,16 @@
+.input-group {
+  display: inline-flex;
+  width: 100%;
+
+  > .input {
+    margin: 0;
+  }
+
+  > .input > * {
+    width: 100%;
+  }
+
+  > .input:not(.-addon) {
+    flex: 1;
+  }
+}
